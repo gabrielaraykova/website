@@ -590,7 +590,7 @@
     <header>
         <div class="container">
             <div class="header-content">
-                <a href="#" class="logo">IVANKA RAYKOVA - tt1</a>
+                <a href="#" class="logo">IVANKA RAYKOVA</a>
                 
                 <nav>
                     <ul class="nav-desktop">
@@ -611,22 +611,7 @@
                 
                 <button class="mobile-nav-toggle">≡</button>
                 
-                <div class="mobile-nav">
-                    <ul>
-                        <li class="dropdown-mobile">
-                            <a href="#">Collections</a>
-                            <ul class="mobile-submenu">
-                                <li><a href="collections/bulgarian-broderie.html">Bulgarian broderie</a></li>
-                                <li><a href="collections/summer-2025.html">Summer 2025</a></li>
-                                <li><a href="collections/winter-2024.html">Winter 2024</a></li>
-                                <li><a href="collections/archive.html">Archive</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#atelier">Atelier</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
+               
             </div>
         </div>
     </header>
@@ -862,8 +847,23 @@
             mobileNavToggle.textContent = mobileNav.classList.contains('active') ? '×' : '≡';
         });
         
-        // Close mobile nav when clicking a link
-        const mobileNavLinks = document.querySelectorAll('.mobile-nav a');
+        // Handle mobile dropdown menu - with fix to prevent entire menu from closing
+        const mobileDropdownToggle = document.querySelector('.dropdown-mobile > a');
+        const mobileSubmenu = document.querySelector('.mobile-submenu');
+        
+        if (mobileDropdownToggle && mobileSubmenu) {
+            mobileDropdownToggle.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation(); // Prevent event from bubbling up
+                mobileSubmenu.classList.toggle('active');
+                mobileDropdownToggle.textContent = mobileSubmenu.classList.contains('active') 
+                    ? 'Collections -' 
+                    : 'Collections +';
+            });
+        }
+        
+        // Close mobile nav when clicking a link (except dropdown)
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav a:not(.dropdown-mobile > a)');
         mobileNavLinks.forEach(link => {
             link.addEventListener('click', () => {
                 mobileNav.classList.remove('active');
@@ -910,40 +910,6 @@
                 e.preventDefault();
                 alert('Thank you for your message. We will be in touch soon.');
                 form.reset();
-            });
-        }
-        
-        // Desktop dropdown menu (on click support in addition to hover)
-        const desktopDropdownToggle = document.querySelector('.dropdown-toggle');
-        const dropdownContent = document.querySelector('.dropdown-content');
-        
-        if (desktopDropdownToggle && dropdownContent) {
-            desktopDropdownToggle.addEventListener('click', (e) => {
-                e.preventDefault();
-                if (window.innerWidth <= 768) return; // Skip for mobile
-                dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
-            });
-            
-            // Close dropdown when clicking outside
-            document.addEventListener('click', (e) => {
-                if (window.innerWidth <= 768) return; // Skip for mobile
-                if (!e.target.matches('.dropdown-toggle') && !e.target.closest('.dropdown-content')) {
-                    dropdownContent.style.display = '';
-                }
-            });
-        }
-        
-        // Handle mobile dropdown menu
-        const mobileDropdownToggle = document.querySelector('.dropdown-mobile > a');
-        const mobileSubmenu = document.querySelector('.mobile-submenu');
-        
-        if (mobileDropdownToggle && mobileSubmenu) {
-            mobileDropdownToggle.addEventListener('click', (e) => {
-                e.preventDefault();
-                mobileSubmenu.classList.toggle('active');
-                mobileDropdownToggle.textContent = mobileSubmenu.classList.contains('active') 
-                    ? 'Collections -' 
-                    : 'Collections +';
             });
         }
     </script>
