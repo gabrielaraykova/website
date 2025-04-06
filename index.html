@@ -1,49 +1,25 @@
-/* Dropdown menu styles */
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
-        
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: var(--primary-color);
-            min-width: 200px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
-            z-index: 1;
-            margin-top: 5px;
-        }
-        
-        .dropdown-content a {
-            color: var(--secondary-color);
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        
-        /* Removed hover effect to allow JS control */
-        /* .dropdown:hover .dropdown-content {
-            display: block;
-        } */
-        
-        .dropdown-content a:hover {
-            background-color: var(--accent-color);
-        }
-        
-        .dropdown-toggle::after {
-            content: '▼';
-            font-size: 0.7rem;
-            margin-left: 5px;
-            vertical-align: middle;
+@media screen and (max-width: 768px) {
+            .hero-content {
+                padding: 0 1rem;
+            }
+            
+            .collection-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+            
+            .about-content, .contact-content {
+                gap: 2rem;
+            }
+        }        /* Mobile Dropdown Menu - Only needed for mobile menu now */
+        .dropdown-mobile > a::after {
+            content: ' +';
+            font-size: 1.2rem;
         }<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IVANKA AYKOVA | Contemporary Fashion Design</title>
+    <title>IVANKA RAYKOVA | Contemporary Fashion Design</title>
     <style>
         /* Base Styles */
         :root {
@@ -200,7 +176,7 @@
         }
         
         .mobile-nav-toggle {
-            display: none;
+            display: block; /* Always show the mobile menu button */
             background: none;
             border: none;
             font-size: 1.5rem;
@@ -525,72 +501,50 @@
             font-size: 0.8rem;
         }
         
-        /* Mobile menu styles */
-        @media screen and (max-width: 768px) {
-            .nav-desktop {
-                display: none;
-            }
-            
-            .mobile-nav-toggle {
-                display: block;
-            }
-            
-            .mobile-nav {
-                position: fixed;
-                top: 0;
-                right: -100%;
-                width: 100%;
-                height: 100vh;
-                background-color: var(--primary-color);
-                padding: 6rem 2rem 2rem;
-                transition: var(--transition);
-                z-index: 1500;
-                overflow-y: auto;
-            }
-            
-            .mobile-nav.active {
-                right: 0;
-            }
-            
-            .mobile-nav li {
-                margin-bottom: 1.5rem;
-                font-size: 1.2rem;
-                text-transform: uppercase;
-                letter-spacing: 1px;
-            }
-            
-            .mobile-submenu {
-                display: none;
-                margin: 1rem 0 0.5rem 1rem;
-                padding-left: 1rem;
-                border-left: 1px solid var(--accent-color);
-            }
-            
-            .mobile-submenu.active {
-                display: block;
-            }
-            
-            .mobile-submenu li {
-                margin-bottom: 1rem;
-                font-size: 1rem;
-            }
-            
-            .dropdown-mobile > a::after {
-                content: ' +';
-                font-size: 1.2rem;
-            }
-            
-            .hero-content {
-                padding: 0 1rem;
-            }
-            
-            .collection-grid {
-                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            }
-            
-            .about-content, .contact-content {
-                gap: 2rem;
-            }
+        /* Mobile nav across all screen sizes */
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 100%;
+            height: 100vh;
+            background-color: var(--primary-color);
+            padding: 6rem 2rem 2rem;
+            transition: var(--transition);
+            z-index: 1500;
+            overflow-y: auto;
+        }
+        
+        .mobile-nav.active {
+            right: 0;
+        }
+        
+        .mobile-nav li {
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .mobile-submenu {
+            display: none;
+            margin: 1rem 0 0.5rem 1rem;
+            padding-left: 1rem;
+            border-left: 1px solid var(--accent-color);
+        }
+        
+        .mobile-submenu.active {
+            display: block;
+        }
+        
+        .mobile-submenu li {
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+        
+        .dropdown-mobile > a::after {
+            content: ' +';
+            font-size: 1.2rem;
         }
     </style>
 </head>
@@ -601,22 +555,7 @@
             <div class="header-content">
                 <a href="#" class="logo">IVANKA RAYKOVA</a>
                 
-                <nav>
-                    <ul class="nav-desktop">
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle">Collections</a>
-                            <div class="dropdown-content">
-                                <a href="collections/bulgarian-broderie.html">Bulgarian broderie</a>
-                                <a href="collections/summer-2025.html">Summer 2025</a>
-                                <a href="collections/winter-2024.html">Winter 2024</a>
-                                <a href="collections/archive.html">Archive</a>
-                            </div>
-                        </li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#atelier">Atelier</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </nav>
+                <!-- Removed desktop navigation as requested -->
                 
                 <button class="mobile-nav-toggle">≡</button>
                 
@@ -647,7 +586,7 @@
             <img src="images/1.jpg" alt="Fashion Collection" class="hero-img">
             <div class="container">
                 <div class="hero-content">
-                    <h1 class="hero-title">IVANKA AYKOVA</h1>
+                    <h1 class="hero-title">IVANKA RAYKOVA</h1>
                     <p class="hero-subtitle">Contemporary Fashion with Traditional Embroidery</p>
                 </div>
             </div>
@@ -662,47 +601,47 @@
             <div class="collection-grid">
                 <!-- Image 1: White off-shoulder dress with red embroidery -->
                 <div class="collection-item">
-                    <img src="images/1.jpg" alt="IVANKA AYKOVA Collection - White embroidered dress" class="collection-img" onclick="openModal(this)">
+                    <img src="images/1.jpg" alt="IVANKA RAYKOVA Collection - White embroidered dress" class="collection-img" onclick="openModal(this)">
                 </div>
                 
                 <!-- Image 2: White halter vest and skirt with embroidery -->
                 <div class="collection-item">
-                    <img src="images/2.jpg" alt="IVANKA AYKOVA Collection - White embroidered set" class="collection-img" onclick="openModal(this)">
+                    <img src="images/2.jpg" alt="IVANKA RAYKOVA Collection - White embroidered set" class="collection-img" onclick="openModal(this)">
                 </div>
                 
                 <!-- Image 3: White blouse with embroidery and wrap skirt -->
                 <div class="collection-item">
-                    <img src="images/3.jpg" alt="IVANKA AYKOVA Collection - White embroidered outfit" class="collection-img" onclick="openModal(this)">
+                    <img src="images/3.jpg" alt="IVANKA RAYKOVA Collection - White embroidered outfit" class="collection-img" onclick="openModal(this)">
                 </div>
                 
                 <!-- Image 4: White vest with shoulder detail and pants -->
                 <div class="collection-item">
-                    <img src="images/4.jpg" alt="IVANKA AYKOVA Collection - White tailored outfit" class="collection-img" onclick="openModal(this)">
+                    <img src="images/4.jpg" alt="IVANKA RAYKOVA Collection - White tailored outfit" class="collection-img" onclick="openModal(this)">
                 </div>
                 
                 <!-- Image 5: White tunic with embroidery -->
                 <div class="collection-item">
-                    <img src="images/5.jpg" alt="IVANKA AYKOVA Collection - White embroidered tunic" class="collection-img" onclick="openModal(this)">
+                    <img src="images/5.jpg" alt="IVANKA RAYKOVA Collection - White embroidered tunic" class="collection-img" onclick="openModal(this)">
                 </div>
                 
                 <!-- Image 6: Beige outfit with embroidery -->
                 <div class="collection-item">
-                    <img src="images/6.jpg" alt="IVANKA AYKOVA Collection - Beige embroidered outfit" class="collection-img" onclick="openModal(this)">
+                    <img src="images/6.jpg" alt="IVANKA RAYKOVA Collection - Beige embroidered outfit" class="collection-img" onclick="openModal(this)">
                 </div>
                 
                 <!-- Image 7: Beige halter dress with embroidery -->
                 <div class="collection-item">
-                    <img src="images/7.jpg" alt="IVANKA AYKOVA Collection - Beige embroidered dress" class="collection-img" onclick="openModal(this)">
+                    <img src="images/7.jpg" alt="IVANKA RAYKOVA Collection - Beige embroidered dress" class="collection-img" onclick="openModal(this)">
                 </div>
                 
                 <!-- Image 8: Men's white suit -->
                 <div class="collection-item">
-                    <img src="images/8.jpg" alt="IVANKA AYKOVA Collection - Men's white suit" class="collection-img" onclick="openModal(this)">
+                    <img src="images/8.jpg" alt="IVANKA RAYKOVA Collection - Men's white suit" class="collection-img" onclick="openModal(this)">
                 </div>
                 
                 <!-- Image 9: Men's beige suit -->
                 <div class="collection-item">
-                    <img src="images/9.jpg" alt="IVANKA AYKOVA Collection - Men's beige suit" class="collection-img" onclick="openModal(this)">
+                    <img src="images/9.jpg" alt="IVANKA RAYKOVA Collection - Men's beige suit" class="collection-img" onclick="openModal(this)">
                 </div>
             </div>
             
@@ -719,7 +658,7 @@
         <div class="container">
             <div class="about-content">
                 <div class="about-image">
-                    <img src="images/10.jpg" alt="Ivanka Aykova - Designer">
+                    <img src="images/10.jpg" alt="Ivanka Raykova - Designer">
                 </div>
                 
                 <div class="about-text">
@@ -814,7 +753,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-col">
-                    <div class="footer-logo">IVANKA AYKOVA</div>
+                    <div class="footer-logo">IVANKA RAYKOVA</div>
                     <p>Contemporary fashion design celebrating cultural heritage through traditional embroidery and modern silhouettes.</p>
                     
                     <div class="social-links">
@@ -858,7 +797,7 @@
             </div>
             
             <div class="copyright">
-                <p>&copy; 2025 IVANKA AYKOVA. All Rights Reserved.</p>
+                <p>&copy; 2025 IVANKA RAYKOVA. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
