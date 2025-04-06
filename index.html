@@ -1,20 +1,4 @@
-@media screen and (max-width: 768px) {
-            .hero-content {
-                padding: 0 1rem;
-            }
-            
-            .collection-grid {
-                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            }
-            
-            .about-content, .contact-content {
-                gap: 2rem;
-            }
-        }        /* Mobile Dropdown Menu - Only needed for mobile menu now */
-        .dropdown-mobile > a::after {
-            content: ' +';
-            font-size: 1.2rem;
-        }<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -176,12 +160,53 @@
         }
         
         .mobile-nav-toggle {
-            display: block; /* Always show the mobile menu button */
+            display: none;
             background: none;
             border: none;
             font-size: 1.5rem;
             cursor: pointer;
             z-index: 2000;
+        }
+        
+        /* Dropdown menu styles */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: var(--primary-color);
+            min-width: 200px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+            z-index: 1;
+            margin-top: 5px;
+        }
+        
+        .dropdown-content a {
+            color: var(--secondary-color);
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        
+        .dropdown-content a:hover {
+            background-color: var(--accent-color);
+        }
+        
+        .dropdown-toggle::after {
+            content: '▼';
+            font-size: 0.7rem;
+            margin-left: 5px;
+            vertical-align: middle;
         }
         
         /* Hero Section */
@@ -207,16 +232,6 @@
             height: 100%;
             object-fit: cover;
             object-position: center;
-        }
-        
-        .hero-slide.active {
-            opacity: 1;
-        }
-        
-        .hero-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
         }
         
         .hero-content {
@@ -501,50 +516,72 @@
             font-size: 0.8rem;
         }
         
-        /* Mobile nav across all screen sizes */
-        .mobile-nav {
-            position: fixed;
-            top: 0;
-            right: -100%;
-            width: 100%;
-            height: 100vh;
-            background-color: var(--primary-color);
-            padding: 6rem 2rem 2rem;
-            transition: var(--transition);
-            z-index: 1500;
-            overflow-y: auto;
-        }
-        
-        .mobile-nav.active {
-            right: 0;
-        }
-        
-        .mobile-nav li {
-            margin-bottom: 1.5rem;
-            font-size: 1.2rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        
-        .mobile-submenu {
-            display: none;
-            margin: 1rem 0 0.5rem 1rem;
-            padding-left: 1rem;
-            border-left: 1px solid var(--accent-color);
-        }
-        
-        .mobile-submenu.active {
-            display: block;
-        }
-        
-        .mobile-submenu li {
-            margin-bottom: 1rem;
-            font-size: 1rem;
-        }
-        
-        .dropdown-mobile > a::after {
-            content: ' +';
-            font-size: 1.2rem;
+        /* Mobile menu styles */
+        @media screen and (max-width: 768px) {
+            .nav-desktop {
+                display: none;
+            }
+            
+            .mobile-nav-toggle {
+                display: block;
+            }
+            
+            .mobile-nav {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 100%;
+                height: 100vh;
+                background-color: var(--primary-color);
+                padding: 6rem 2rem 2rem;
+                transition: var(--transition);
+                z-index: 1500;
+                overflow-y: auto;
+            }
+            
+            .mobile-nav.active {
+                right: 0;
+            }
+            
+            .mobile-nav li {
+                margin-bottom: 1.5rem;
+                font-size: 1.2rem;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+            }
+            
+            .mobile-submenu {
+                display: none;
+                margin: 1rem 0 0.5rem 1rem;
+                padding-left: 1rem;
+                border-left: 1px solid var(--accent-color);
+            }
+            
+            .mobile-submenu.active {
+                display: block;
+            }
+            
+            .mobile-submenu li {
+                margin-bottom: 1rem;
+                font-size: 1rem;
+            }
+            
+            .dropdown-mobile > a::after {
+                content: ' +';
+                font-size: 1.2rem;
+            }
+            
+            .hero-content {
+                padding: 0 1rem;
+            }
+            
+            .collection-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+            
+            .about-content, .contact-content {
+                gap: 2rem;
+            }
         }
     </style>
 </head>
@@ -553,9 +590,24 @@
     <header>
         <div class="container">
             <div class="header-content">
-                <a href="#" class="logo">IVANKA RAYKOVA - test 7</a>
+                <a href="#" class="logo">IVANKA RAYKOVA - tt1</a>
                 
-                <!-- Removed desktop navigation as requested -->
+                <nav>
+                    <ul class="nav-desktop">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle">Collections</a>
+                            <div class="dropdown-content">
+                                <a href="collections/bulgarian-broderie.html">Bulgarian broderie</a>
+                                <a href="collections/summer-2025.html">Summer 2025</a>
+                                <a href="collections/winter-2024.html">Winter 2024</a>
+                                <a href="collections/archive.html">Archive</a>
+                            </div>
+                        </li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#atelier">Atelier</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
                 
                 <button class="mobile-nav-toggle">≡</button>
                 
@@ -582,7 +634,6 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-slide active">
-            <!-- Using one of the runway images for the hero background -->
             <img src="images/1.jpg" alt="Fashion Collection" class="hero-img">
             <div class="container">
                 <div class="hero-content">
@@ -599,47 +650,47 @@
             <h2 class="section-title">Bulgarian broderie</h2>
             
             <div class="collection-grid">
-                <!-- Image 1: White off-shoulder dress with red embroidery -->
+                <!-- Image 1 -->
                 <div class="collection-item">
                     <img src="images/1.jpg" alt="IVANKA RAYKOVA Collection - White embroidered dress" class="collection-img" onclick="openModal(this)">
                 </div>
                 
-                <!-- Image 2: White halter vest and skirt with embroidery -->
+                <!-- Image 2 -->
                 <div class="collection-item">
                     <img src="images/2.jpg" alt="IVANKA RAYKOVA Collection - White embroidered set" class="collection-img" onclick="openModal(this)">
                 </div>
                 
-                <!-- Image 3: White blouse with embroidery and wrap skirt -->
+                <!-- Image 3 -->
                 <div class="collection-item">
                     <img src="images/3.jpg" alt="IVANKA RAYKOVA Collection - White embroidered outfit" class="collection-img" onclick="openModal(this)">
                 </div>
                 
-                <!-- Image 4: White vest with shoulder detail and pants -->
+                <!-- Image 4 -->
                 <div class="collection-item">
                     <img src="images/4.jpg" alt="IVANKA RAYKOVA Collection - White tailored outfit" class="collection-img" onclick="openModal(this)">
                 </div>
                 
-                <!-- Image 5: White tunic with embroidery -->
+                <!-- Image 5 -->
                 <div class="collection-item">
                     <img src="images/5.jpg" alt="IVANKA RAYKOVA Collection - White embroidered tunic" class="collection-img" onclick="openModal(this)">
                 </div>
                 
-                <!-- Image 6: Beige outfit with embroidery -->
+                <!-- Image 6 -->
                 <div class="collection-item">
                     <img src="images/6.jpg" alt="IVANKA RAYKOVA Collection - Beige embroidered outfit" class="collection-img" onclick="openModal(this)">
                 </div>
                 
-                <!-- Image 7: Beige halter dress with embroidery -->
+                <!-- Image 7 -->
                 <div class="collection-item">
                     <img src="images/7.jpg" alt="IVANKA RAYKOVA Collection - Beige embroidered dress" class="collection-img" onclick="openModal(this)">
                 </div>
                 
-                <!-- Image 8: Men's white suit -->
+                <!-- Image 8 -->
                 <div class="collection-item">
                     <img src="images/8.jpg" alt="IVANKA RAYKOVA Collection - Men's white suit" class="collection-img" onclick="openModal(this)">
                 </div>
                 
-                <!-- Image 9: Men's beige suit -->
+                <!-- Image 9 -->
                 <div class="collection-item">
                     <img src="images/9.jpg" alt="IVANKA RAYKOVA Collection - Men's beige suit" class="collection-img" onclick="openModal(this)">
                 </div>
@@ -663,8 +714,8 @@
                 
                 <div class="about-text">
                     <h2 class="about-title">About the Designer</h2>
-                    <p>With a background in fine arts and textile design, Ivanka Aykova brings a unique perspective to contemporary fashion that honors traditional craftsmanship. Inspired by natural landscapes and cultural heritage, each piece is thoughtfully crafted to blend modern silhouettes with traditional embroidery techniques.</p>
-                    <p>The IVANKA AYKOVA label celebrates the beauty of traditional embroidery and craftsmanship while creating elegant, minimalist designs in a predominantly white and neutral color palette that allows the intricate detailing to take center stage.</p>
+                    <p>With a background in fine arts and textile design, Ivanka Raykova brings a unique perspective to contemporary fashion that honors traditional craftsmanship. Inspired by natural landscapes and cultural heritage, each piece is thoughtfully crafted to blend modern silhouettes with traditional embroidery techniques.</p>
+                    <p>The IVANKA RAYKOVA label celebrates the beauty of traditional embroidery and craftsmanship while creating elegant, minimalist designs in a predominantly white and neutral color palette that allows the intricate detailing to take center stage.</p>
                     <p>Each collection reflects a commitment to preserving cultural heritage, supporting local artisans, and creating timeless pieces that connect the past with the present—designs that tell a story while embracing modern aesthetics.</p>
                 </div>
             </div>
@@ -700,7 +751,7 @@
                     
                     <div class="contact-item">
                         <span class="contact-label">Email</span>
-                        <p>studio@maisondesign.com</p>
+                        <p>studio@ivankaraykova.com</p>
                     </div>
                     
                     <div class="contact-item">
@@ -777,11 +828,10 @@
                 <div class="footer-col">
                     <h4 class="footer-heading">Collections</h4>
                     <ul class="footer-nav">
-                        <li><a href="#">Embroidered Dresses</a></li>
-                        <li><a href="#">Contemporary Sets</a></li>
-                        <li><a href="#">Natural Palette</a></li>
-                        <li><a href="#">Menswear</a></li>
-                        <li><a href="#">Archive</a></li>
+                        <li><a href="collections/bulgarian-broderie.html">Bulgarian broderie</a></li>
+                        <li><a href="collections/summer-2025.html">Summer 2025</a></li>
+                        <li><a href="collections/winter-2024.html">Winter 2024</a></li>
+                        <li><a href="collections/archive.html">Archive</a></li>
                     </ul>
                 </div>
                 
@@ -863,20 +913,22 @@
             });
         }
         
-        // Handle desktop dropdown menu (for click)
+        // Desktop dropdown menu (on click support in addition to hover)
         const desktopDropdownToggle = document.querySelector('.dropdown-toggle');
         const dropdownContent = document.querySelector('.dropdown-content');
         
         if (desktopDropdownToggle && dropdownContent) {
             desktopDropdownToggle.addEventListener('click', (e) => {
                 e.preventDefault();
+                if (window.innerWidth <= 768) return; // Skip for mobile
                 dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
             });
             
             // Close dropdown when clicking outside
             document.addEventListener('click', (e) => {
+                if (window.innerWidth <= 768) return; // Skip for mobile
                 if (!e.target.matches('.dropdown-toggle') && !e.target.closest('.dropdown-content')) {
-                    dropdownContent.style.display = 'none';
+                    dropdownContent.style.display = '';
                 }
             });
         }
