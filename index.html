@@ -815,21 +815,6 @@
              }
          });
 
-          dropdown.addEventListener('mouseenter', () => {
-    dropdownContent.style.display = 'block';
-    setTimeout(() => {
-        dropdownContent.style.opacity = '1';
-        dropdownContent.style.visibility = 'visible';
-    }, 100); // First timing parameter (delay before showing)
-});
-
-dropdown.addEventListener('mouseleave', () => {
-    dropdownContent.style.opacity = '0';
-    dropdownContent.style.visibility = 'hidden';
-    setTimeout(() => {
-        dropdownContent.style.display = 'none';
-    }, 400); // Second timing parameter (delay before hiding completely)
-});
          // Image Modal
          function openModal(img) {
              const modal = document.getElementById('imageModal');
