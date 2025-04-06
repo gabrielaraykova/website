@@ -120,45 +120,7 @@
             letter-spacing: 2px;
         }
         
-        .nav-desktop {
-            display: flex;
-        }
-        
-        .nav-desktop li {
-            margin-left: 2.5rem;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-        
-        .nav-desktop a {
-            position: relative;
-            transition: var(--transition);
-        }
-        
-        .nav-desktop a:hover {
-            opacity: 0.7;
-        }
-        
-        .nav-desktop a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 1px;
-            bottom: -2px;
-            left: 0;
-            background-color: var(--secondary-color);
-            transition: var(--transition);
-        }
-        
-        .nav-desktop a:hover::after {
-            width: 100%;
-        }
-        
-        .dropdown-toggle:hover::after {
-            width: 0 !important;
-        }
-        
+        /* IMPORTANT: Hide the mobile toggle button by default (for desktop) */
         .mobile-nav-toggle {
             display: none;
             background: none;
@@ -168,45 +130,50 @@
             z-index: 2000;
         }
         
-        /* Dropdown menu styles */
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
-        
-        .dropdown-content {
-            display: none;
-            position: absolute;
+        /* Mobile Navigation */
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 100%;
+            height: 100vh;
             background-color: var(--primary-color);
-            min-width: 200px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
-            z-index: 1;
-            margin-top: 5px;
+            padding: 6rem 2rem 2rem;
+            transition: var(--transition);
+            z-index: 1500;
+            overflow-y: auto;
         }
         
-        .dropdown-content a {
-            color: var(--secondary-color);
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-            font-size: 0.85rem;
+        .mobile-nav.active {
+            right: 0;
+        }
+        
+        .mobile-nav li {
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
         
-        .dropdown:hover .dropdown-content {
+        .mobile-submenu {
+            display: none;
+            margin: 1rem 0 0.5rem 1rem;
+            padding-left: 1rem;
+            border-left: 1px solid var(--accent-color);
+        }
+        
+        .mobile-submenu.active {
             display: block;
         }
         
-        .dropdown-content a:hover {
-            background-color: var(--accent-color);
+        .mobile-submenu li {
+            margin-bottom: 1rem;
+            font-size: 1rem;
         }
         
-        .dropdown-toggle::after {
-            content: '▼';
-            font-size: 0.7rem;
-            margin-left: 5px;
-            vertical-align: middle;
+        .dropdown-mobile > a::after {
+            content: ' +';
+            font-size: 1.2rem;
         }
         
         /* Hero Section */
@@ -516,73 +483,72 @@
             font-size: 0.8rem;
         }
         
-        /* Mobile menu styles */
-        @media screen and (max-width: 768px) {
-            .nav-desktop {
-                display: none;
-            }
-            
-            .mobile-nav-toggle {
-                display: block;
-            }
-            
-            .mobile-nav {
-                position: fixed;
-                top: 0;
-                right: -100%;
-                width: 100%;
-                height: 100vh;
-                background-color: var(--primary-color);
-                padding: 6rem 2rem 2rem;
-                transition: var(--transition);
-                z-index: 1500;
-                overflow-y: auto;
-            }
-            
-            .mobile-nav.active {
-                right: 0;
-            }
-            
-            .mobile-nav li {
-                margin-bottom: 1.5rem;
-                font-size: 1.2rem;
-                text-transform: uppercase;
-                letter-spacing: 1px;
-            }
-            
-            .mobile-submenu {
-                display: none;
-                margin: 1rem 0 0.5rem 1rem;
-                padding-left: 1rem;
-                border-left: 1px solid var(--accent-color);
-            }
-            
-            .mobile-submenu.active {
-                display: block;
-            }
-            
-            .mobile-submenu li {
-                margin-bottom: 1rem;
-                font-size: 1rem;
-            }
-            
-            .dropdown-mobile > a::after {
-                content: ' +';
-                font-size: 1.2rem;
-            }
-            
-            .hero-content {
-                padding: 0 1rem;
-            }
-            
-            .collection-grid {
-                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            }
-            
-            .about-content, .contact-content {
-                gap: 2rem;
-            }
+        /* Mobile-only styles */
+@media screen and (max-width: 768px) {
+        .nav-desktop {
+            display: none;
         }
+        
+        .mobile-nav-toggle {
+            display: block;
+        }
+        
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 100%;
+            height: 100vh;
+            background-color: var(--primary-color);
+            padding: 6rem 2rem 2rem;
+            transition: var(--transition);
+            z-index: 1500;
+            overflow-y: auto;
+        }
+        
+        .mobile-nav.active {
+            right: 0;
+        }
+        
+        .mobile-nav li {
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .mobile-submenu {
+            display: none;
+            margin: 1rem 0 0.5rem 1rem;
+            padding-left: 1rem;
+            border-left: 1px solid var(--accent-color);
+        }
+        
+        .mobile-submenu.active {
+            display: block;
+        }
+        
+        .mobile-submenu li {
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+        
+        .dropdown-mobile > a::after {
+            content: ' +';
+            font-size: 1.2rem;
+        }
+    }
+
+    /* Hide mobile nav on larger screens */
+    @media screen and (min-width: 769px) {
+        .mobile-nav {
+            display: none !important;
+        }
+        
+        .mobile-nav-toggle {
+            display: none !important;
+        }
+    }
     </style>
 </head>
 <body>
@@ -592,26 +558,25 @@
             <div class="header-content">
                 <a href="#" class="logo">IVANKA RAYKOVA</a>
                 
-                <nav>
-                    <ul class="nav-desktop">
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle">Collections</a>
-                            <div class="dropdown-content">
-                                <a href="collections/bulgarian-broderie.html">Bulgarian broderie</a>
-                                <a href="collections/summer-2025.html">Summer 2025</a>
-                                <a href="collections/winter-2024.html">Winter 2024</a>
-                                <a href="collections/archive.html">Archive</a>
-                            </div>
+                <!-- No desktop navigation, only mobile toggle -->
+                <button class="mobile-nav-toggle">≡</button>
+                
+                <div class="mobile-nav">
+                    <ul>
+                        <li class="dropdown-mobile">
+                            <a href="#">Collections</a>
+                            <ul class="mobile-submenu">
+                                <li><a href="collections/bulgarian-broderie.html">Bulgarian broderie</a></li>
+                                <li><a href="collections/summer-2025.html">Summer 2025</a></li>
+                                <li><a href="collections/winter-2024.html">Winter 2024</a></li>
+                                <li><a href="collections/archive.html">Archive</a></li>
+                            </ul>
                         </li>
                         <li><a href="#about">About</a></li>
                         <li><a href="#atelier">Atelier</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
-                </nav>
-                
-                <button class="mobile-nav-toggle">≡</button>
-                
-               
+                </div>
             </div>
         </div>
     </header>
