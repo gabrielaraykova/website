@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IVANKA AYKOVA | Contemporary Fashion Design - UPDATED</title>
+    <title>IVANKA AYKOVA | Contemporary Fashion Design</title>
     <style>
         /* Base Styles */
         :root {
@@ -178,8 +178,15 @@
             position: absolute;
             top: 0;
             left: 0;
-            opacity: 0;
+            opacity: 1;
             transition: opacity 1s ease;
+        }
+        
+        .hero-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
         }
         
         .hero-slide.active {
@@ -554,11 +561,12 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-slide active">
-            <img src="/api/placeholder/1600/900" alt="Fashion Collection" class="hero-img">
+            <!-- Using one of the runway images for the hero background -->
+            <img src="images/1.jpg" alt="Fashion Collection" class="hero-img">
             <div class="container">
                 <div class="hero-content">
-                    <h1 class="hero-title">Nature-Inspired Collection 2025</h1>
-                    <p class="hero-subtitle">Contemporary silhouettes with traditional embroidery that celebrates our cultural heritage.</p>
+                    <h1 class="hero-title">IVANKA AYKOVA</h1>
+                    <p class="hero-subtitle">Contemporary Fashion with Traditional Embroidery</p>
                 </div>
             </div>
         </div>
@@ -567,7 +575,7 @@
     <!-- Collections -->
     <section id="collections" class="collections">
         <div class="container">
-            <h2 class="section-title">Collections</h2>
+            <h2 class="section-title">Bulgarian broderie</h2>
             
             <div class="collection-grid">
                 <!-- Image 1: White off-shoulder dress with red embroidery -->
