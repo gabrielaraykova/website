@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collection | IVANKA RAYKOVA</title>
+    <style>
+        /* Base Styles */
+        :root {
+            --primary-color: #f8f8f8;
+            --secondary-color: #212121;
+            --accent-color: #e0e0e0;
+            --font-main: 'Arial', sans-serif;
+            --font-secondary: 'Times New Roman', serif;
+            --transition: all 0.3s ease;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: var(--font-main);
+            color: var(--secondary-color);
+            background-color: var(--primary-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        ul {
+            list-style: none;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        button, .btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: inherit;
+            padding: 0;
+        }
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        /* Typography */
+        h1, h2, h3, h4, h5 {
+            font-weight: normal;
+            line-height: 1.2;
+        }
+        h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            letter-spacing: 1px;
+        }
+        h2 {
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            margin-bottom: 2rem;
+            letter-spacing: 0.5px;
+        }
+        h3 {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            margin-bottom: 1rem;
+        }
+        p {
+            margin-bottom: 1.5rem;
+            font-size: clamp(0.9rem, 2vw, 1rem);
+            letter-spacing: 0.3px;
+        }
+        .uppercase {
+            text-transform: uppercase;
+        }
+        .text-center {
+            text-align: center;
+        }
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(248, 248, 248, 0.95);
+            transition: var(--transition);
+        }
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 0;
+        }
+        .logo {
+            font-family: var(--font-secondary);
+            font-size: 1.8rem;
+            letter-spacing: 2px;
+        }
+        /* IMPORTANT: Hide the mobile toggle button by default (for desktop) */
+        .mobile-nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 2000;
+        }
+        /* Mobile Navigation */
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 100%;
+            height: 100vh;
+            background-color: var(--primary-color);
+            padding: 6rem 2rem 2rem;
+            transition: var(--transition);
+            z-index: 1500;
+            overflow-y: auto;
+        }
+        .mobile-nav.active {
+            right: 0;
+        }
+        .mobile-nav li {
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .mobile-submenu {
+            display: none;
+            margin: 1rem 0 0.5rem 1rem;
+            padding-left: 1rem;
+            border-left: 1px solid var(--accent-color);
+        }
+        .mobile-submenu.active {
+            display: block;
+        }
+        .mobile-submenu li {
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+        .dropdown-mobile > a::after {
+            content: ' +';
+            font-size: 1.2rem;
+        }
+        /* Collections */
+        .collection-page {
+            padding: 8rem 0;
+        }
+        .collection-description {
+            max-width: 800px;
+            margin: 0 auto 4rem;
+            text-align: center;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-family: var(--font-secondary);
+        }
+        .collection-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .collection-item {
+            position: relative;
+            overflow: hidden;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+        .collection-img {
+            aspect-ratio: 2/3;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .collection-item:hover .collection-img {
+            transform: scale(1.03);
+        }
+        /* Detail Page */
+        .product-detail {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            z-index: 2000;
+            overflow-y: auto;
+            padding: 6rem 2rem 2rem;
+        }
+        .detail-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4rem;
+        }
+        .detail-image {
+            flex: 1;
+            min-width: 300px;
+        }
+        .detail-image img {
+            width: 100%;
+            height: auto;
+            max-height: 80vh;
+            object-fit: contain;
+        }
+        .detail-info {
+            flex: 1;
+            min-width: 300px;
+        }
+        .detail-title {
+            font-family: var(--font-secondary);
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+        .detail-description {
+            margin-bottom: 2rem;
+        }
+        .detail-specs {
+            margin-bottom: 2rem;
+        }
+        .spec-title {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        .close-detail {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 90%;
+        }
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+        .close-modal:hover,
+        .close-modal:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        /* Footer */
+        footer {
+            padding: 4rem 0;
+            background-color: var(--primary-color);
+        }
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+        .footer-logo {
+            font-family: var(--font-secondary);
+            font-size: 1.5rem;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+        }
+        .footer-col {
+            flex: 1;
+            min-width: 200px;
+        }
+        .footer-heading {
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        .footer-nav li {
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+        .footer-nav a:hover {
+            text-decoration: underline;
+        }
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .social-link {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            border: 1px solid var(--secondary-color);
+            transition: var(--transition);
+        }
+        .social-link:hover {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+        }
+        .copyright {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(33, 33, 33, 0.1);
+            text-align: center;
+            font-size: 0.8rem;
+        }
+        /* Desktop Navigation */
+        .nav-desktop {
+            display: flex;
+            align-items: center;
+        }
+        .nav-desktop li {
+            margin-left: 2.5rem;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            position: relative;
+        }
+        .nav-desktop a {
+            position: relative;
+            transition: var(--transition);
+        }
+        .nav-desktop a:hover {
+            opacity: 0.7;
+        }
+        .nav-desktop a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -2px;
+            left: 0;
+            background-color: var(--secondary-color);
+            transition: var(--transition);
+        }
+        .nav-desktop a:hover::after {
+            width: 100%;
+        }
+        /* Dropdown menu styles */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-toggle::after {
+            content: '▼';
+            font-size: 0.7rem;
+            margin-left: 5px;
+            vertical-align: middle;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: var(--primary-color);
+            min-width: 200px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+            z-index: 1000;
+            margin-top: 10px;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .dropdown-content a {
+            color: var(--secondary-color);
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .dropdown-content a:hover {
+            background-color: var(--accent-color);
+        }
+        .dropdown-toggle:hover::after {
+            opacity: 0.7;
+        }
+        /* Mobile-only styles */
+        @media screen and (max-width: 768px) {
+            .nav-desktop {
+                display: none;
+            }
+            .mobile-nav-toggle {
+                display: block;
+            }
+            .detail-container {
+                flex-direction: column;
+                gap: 2rem;
+            }
+        }
+        /* Hide mobile nav on larger screens */
+        @media screen and (min-width: 769px) {
+            .mobile-nav {
+                display: none !important;
+            }
+            .mobile-nav-toggle {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="/index.html" class="logo">IVANKA RAYKOVA</a>
+                
+                <nav>
+                    <ul class="nav-desktop">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle">Collections</a>
+                            <div class="dropdown-content">
+                                <a href="/collections/bulgarian-broderie/">Bulgarian broderie</a>
+                                <a href="/collections/summer-2025/">Summer 2025</a>
+                                <a href="/collections/winter-2024/">Winter 2024</a>
+                                <a href="/collections/archive/">Archive</a>
+                            </div>
+                        </li>
+                        <li><a href="/index.html#about">About</a></li>
+                        <li><a href="/index.html#atelier">Atelier</a></li>
+                        <li><a href="/index.html#contact">Contact</a></li>
+                    </ul>
+                </nav>
+                
+                <button class="mobile-nav-toggle">≡</button>
+                
+                <div class="mobile-nav">
+                    <ul>
+                        <li class="dropdown-mobile">
+                            <a href="#">Collections</a>
+                            <ul class="mobile-submenu">
+                                <a href="/collections/bulgarian-broderie/">Bulgarian broderie</a>
+                                <a href="/collections/summer-2025/">Summer 2025</a>
+                                <a href="/collections/winter-2024/">Winter 2024</a>
+                                <a href="/collections/archive/">Archive</a>
+                            </ul>
+                        </li>
+                        <li><a href="/index.html#about">About</a></li>
+                        <li><a href="/index.html#atelier">Atelier</a></li>
+                        <li><a href="/index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Collection Page Content -->
+    <section class="collection-page">
+        <div class="container">
+            <h1 class="section-title" id="collection-title">Loading Collection...</h1>
+            <p class="collection-description" id="collection-description">Please wait while the collection loads...</p>
+            
+            <div class="collection-grid" id="collection-grid">
+                <!-- Collection items will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Detail View -->
+    <div class="product-detail" id="product-detail">
+        <span class="close-detail" onclick="closeDetail()">&times;</span>
+        <div class="detail-container">
+            <div class="detail-image">
+                <img id="detail-img" src="" alt="">
+            </div>
+            <div class="detail-info">
+                <h2 class="detail-title" id="detail-title"></h2>
+                <div class="detail-description" id="detail-description"></div>
+                
+                <div class="detail-specs">
+                    <p class="spec-title">Material Composition:</p>
+                    <p id="detail-material"></p>
+                    
+                    <p class="spec-title">Fabric:</p>
+                    <p id="detail-fabric"></p>
+                    
+                    <p class="spec-title">Craftsmanship:</p>
+                    <p id="detail-craftsmanship"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <div class="footer-logo">IVANKA RAYKOVA</div>
+                    <p>Contemporary fashion design celebrating cultural heritage through traditional embroidery and modern silhouettes.</p>
+                    
+                    <div class="social-links">
+                        <a href="#" class="social-link">IG</a>
+                        <a href="#" class="social-link">FB</a>
+                        <a href="#" class="social-link">TW</a>
+                        <a href="#" class="social-link">PT</a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 class="footer-heading">Navigation</h4>
+                    <ul class="footer-nav">
+                        <li><a href="/index.html">Home</a></li>
+                        <li><a href="/index.html#about">About</a></li>
+                        <li><a href="/index.html#atelier">Atelier</a></li>
+                        <li><a href="/index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 class="footer-heading">Collections</h4>
+                    <ul class="footer-nav">
+                        <li><a href="/collections/bulgarian-broderie/">Bulgarian broderie</a></li>
+                        <li><a href="/collections/summer-2025/">Summer 2025</a></li>
+                        <li><a href="/collections/winter-2024/">Winter 2024</a></li>
+                        <li><a href="/collections/archive/">Archive</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 class="footer-heading">Information</h4>
+                    <ul class="footer-nav">
+                        <li><a href="#">Sustainability</a></li>
+                        <li><a href="#">Shipping & Returns</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 IVANKA RAYKOVA. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Get the collection name from the URL path
+        function getCollectionPathFromUrl() {
+            const path = window.location.pathname;
+            const pathSegments = path.split('/').filter(segment => segment !== '');
+            
+            // We expect a path like /collections/collection-name/
+            if (pathSegments.length >= 2 && pathSegments[0] === 'collections') {
+                return pathSegments[1];
+            }
+            
+            // Default to bulgarian-broderie if we can't determine the collection
+            return 'bulgarian-broderie';
+        }
+        
+        // Load collection data
+        async function loadCollectionData() {
+            const collectionPath = getCollectionPathFromUrl();
+            try {
+                const response = await fetch(`/collections/${collectionPath}/data.json`);
+                if (!response.ok) {
+                    throw new Error(`Failed to load collection data: ${response.status}`);
+                }
+                const data = await response.json();
+                displayCollection(data, collectionPath);
+            } catch (error) {
+                console.error('Error loading collection data:', error);
+                document.getElementById('collection-description').textContent = 
+                    'Unable to load collection data. Please try again later.';
+            }
+        }
+        
+        // Display collection data
+        function displayCollection(data, collectionPath) {
+            // Set collection title and description
+            document.getElementById('collection-title').textContent = data.title;
+            document.getElementById('collection-description').textContent = data.description;
+            document.title = `${data.title} | IVANKA RAYKOVA`;
+            
+            // Generate grid items
+            const gridContainer = document.getElementById('collection-grid');
+            gridContainer.innerHTML = '';
+            
+            data.items.forEach((item, index) => {
+                const itemDiv = document.createElement('div');
+                itemDiv.className = 'collection-item';
+                itemDiv.innerHTML = `
+                    <img src="/collections/${collectionPath}/images/${item.image}" 
+                         alt="${item.title}" 
+                         class="collection-img" 
+                         onclick="openDetail(${index})">
+                `;
+                gridContainer.appendChild(itemDiv);
+            });
+            
+            // Store the collection data globally for detail view access
+            window.collectionData = {
+                items: data.items,
+                path: collectionPath
+            };
+        }
+        
+        // Open detail view for a product
+        function openDetail(index) {
+            const item = window.collectionData.items[index];
+            const collectionPath = window.collectionData.path;
+            
+            // Set detail view content
+            document.getElementById('detail-img').src = `/collections/${collectionPath}/images/${item.image}`;
+            document.getElementById('detail-img').alt = item.title;
+            document.getElementById('detail-title').textContent = item.title;
+            document.getElementById('detail-description').innerHTML = item.description;
+            document.getElementById('detail-material').textContent = item.material;
+            document.getElementById('detail-fabric').textContent = item.fabric;
+            document.getElementById('detail-craftsmanship').textContent = item.craftsmanship;
+            
+            // Show detail view
+            document.getElementById('product-detail').style.display = 'block';
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+        }
+        
+        // Close detail view
+        function closeDetail() {
+            document.getElementById('product-detail').style.display = 'none';
+            document.body.style.overflow = 'auto'; // Restore scrolling
+        }
+        
+        // Mobile Navigation
+        const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+        const mobileNav = document.querySelector('.mobile-nav');
+        
+        mobileNavToggle.addEventListener('click', () => {
+            mobileNav.classList.toggle('active');
+            mobileNavToggle.textContent = mobileNav.classList.contains('active') ? '×' : '≡';
+        });
+        
+        // Close mobile nav when clicking a link
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav a');
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileNav.classList.remove('active');
+                mobileNavToggle.textContent = '≡';
+            });
+        });
+        
+        // Handle mobile dropdown menu
+        const mobileDropdownToggle = document.querySelector('.dropdown-mobile > a');
+        const mobileSubmenu = document.querySelector('.mobile-submenu');
+        
+        if (mobileDropdownToggle && mobileSubmenu) {
+            mobileDropdownToggle.addEventListener('click', (e) => {
+                e.preventDefault();
+                mobileSubmenu.classList.toggle('active');
+                mobileDropdownToggle.textContent = mobileSubmenu.classList.contains('active') 
+                    ? 'Collections -' 
+                    : 'Collections +';
+            });
+        }
+        
+        // Header scroll effect
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.boxShadow = 'none';
+            }
+        });
+        
+        // Close detail view when clicking escape key
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeDetail();
+            }
+        });
+        
+        // Load collection data when page loads
+        document.addEventListener('DOMContentLoaded', loadCollectionData);
+    </script>
+</body>
+</html>
