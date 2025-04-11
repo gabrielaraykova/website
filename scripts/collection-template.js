@@ -5,10 +5,11 @@ const collectionsIndex = pathSegments.indexOf('collections'); if (collectionsInd
     return pathSegments[collectionsIndex + 1];
 }
 return 'bulgarian-broderie';
-}
+
 // Load collection dataasync function loadCollectionData() {
 const collectionPath = getCollectionPathFromUrl(); try {
-    const response = await fetch(`./data.json`); if (!response.ok) {
+    const response = await fetch(`data.json`);
+    if (!response.ok) {
         throw new Error(`Failed to load collection data: ${response.status}`);
     }
     const data = await response.json(); displayCollection(data, collectionPath);
