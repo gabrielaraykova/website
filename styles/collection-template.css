@@ -338,28 +338,19 @@ header {
     }
 }
 
-/* Add these new styles */
-.home-collection {
-    margin-bottom: 4rem;
-}
-
 /* Home collection styles */
 .home-collection {
     display: grid;
     gap: 2rem;
     margin-bottom: 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 /* Desktop styles */
 @media screen and (min-width: 769px) {
     .home-collection {
         grid-template-columns: repeat(2, 1fr);
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-
-    .mobile-only {
-        display: none;
     }
 }
 
@@ -368,11 +359,6 @@ header {
     .home-collection {
         grid-template-columns: 1fr;
         max-width: 400px;
-        margin: 0 auto;
-    }
-
-    .desktop-only {
-        display: none;
     }
 }
 
