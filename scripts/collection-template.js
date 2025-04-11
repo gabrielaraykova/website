@@ -72,17 +72,37 @@ function openDetail(index) {
 }
 
 // Close detail view
-function closeDetail() {
-    document.getElementById('product-detail').style.display = 'none';
-    document.body.style.overflow = 'auto';
+function closeDetail(e) {
+    if (e) {
+        e.preventDefault();
+        e.stopPropagation();
+    }
+    const detailView = document.getElementById('product-detail');
+    if (detailView) {
+        detailView.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
 }
 
 // Initialize on page load
-document.addEventListener('DOMContentLoaded', loadCollectionData);
+document.addEventListener('DOMContentLoaded', function () {
+    // Load collection data
+    loadCollectionData();
 
-// Handle escape key - remove the history.back()
-window.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && document.getElementById('product-detail').style.display === 'block') {
-        closeDetail();
+    // Add click event listener to close button
+    const closeBtn = document.getElementById('closeDetailBtn');
+    if (closeBtn) {
+        closeBtn.addEventListener('click', closeDetail);
     }
+
+    // Handle escape key
+    window.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') {
+            e.preventDefault(); // Prevent default escape behavior
+            const detailView = document.getElementById('product-detail');
+            if (detailView && detailView.style.display === 'block') {
+                closeDetail();
+            }
+        }
+    });
 });
