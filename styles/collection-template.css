@@ -338,11 +338,11 @@ header {
     }
 }
 
-/* Home collection styles */
+/* Home collection base styles */
 .home-collection {
     display: grid;
     gap: 2rem;
-    margin-bottom: 4rem;
+    margin: 0 auto 4rem auto;
 }
 
 /* Mobile styles */
@@ -350,11 +350,14 @@ header {
     .home-collection {
         grid-template-columns: 1fr;
         max-width: 400px;
-        margin: 0 auto;
     }
 
     .desktop-only {
         display: none !important;
+    }
+
+    .main-item {
+        width: 100%;
     }
 }
 
@@ -363,7 +366,6 @@ header {
     .home-collection {
         grid-template-columns: repeat(2, 1fr);
         max-width: 1200px;
-        margin: 0 auto;
     }
 
     .desktop-only {
@@ -371,19 +373,19 @@ header {
     }
 }
 
-.home-collection .collection-item {
+.collection-item {
     position: relative;
     overflow: hidden;
     cursor: pointer;
 }
 
-.home-collection .collection-item img {
+.collection-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease;
 }
 
-.home-collection .collection-item:hover img {
+.collection-item:hover .collection-img {
     transform: scale(1.05);
 }
