@@ -1,33 +1,35 @@
-// Get the collection name from the URL pathfunction getCollectionPathFromUrl() {
-const path = window.location.pathname; const pathSegments = path.split('/').filter(segment => segment !== '');
-// Look for 'collections' and the following segment
-const collectionsIndex = pathSegments.indexOf('collections'); if (collectionsIndex !== -1 && pathSegments.length > collectionsIndex + 1) {
-    return pathSegments[collectionsIndex + 1];
-}
-return 'bulgarian-broderie';
+// Get the collection name from the URL path
+function getCollectionPathFromUrl() {
+    const path = window.location.pathname;
+    const pathSegments = path.split('/').filter(segment => segment !== '');
 
-// Load collection dataasync function loadCollectionData() {
-const collectionPath = getCollectionPathFromUrl();
-try {
-    // Use the correct path to data.json relative to the collection folder
-    const response = await fetch('./data.json');
-
-    if (!response.ok) {
-        throw new Error(`Failed to load collection data: ${response.status}`);
+    // Look for 'collections' and the following segment
+    const collectionsIndex = pathSegments.indexOf('collections');
+    if (collectionsIndex !== -1 && pathSegments.length > collectionsIndex + 1) {
+        return pathSegments[collectionsIndex + 1];
     }
-    const data = await response.json();
-    displayCollection(data, collectionPath);
-} catch (error) {
-    console.error('Error loading collection data:', error);
-    // Add more detailed error message
-    console.error('Failed to load from path:', window.location.pathname);
-    document.getElementById('collection-description').textContent = 'Unable to load collection data. Please try again later.';
-    document.getElementById('collection-grid').innerHTML = `
-        <div style="grid-column: 1/-1; text-align: center; padding: 4rem 0;">
-            <p>Error loading collection. Please check console for details.</p>
-        </div>
-    `;
+    return 'bulgarian-broderie';
 }
+
+// Load collection data
+async function loadCollectionData() {
+    const collectionPath = getCollectionPathFromUrl();
+    try {
+        const response = await fetch('./data.json');
+        if (!response.ok) {
+            throw new Error(`Failed to load collection data: ${response.status}`);
+        }
+        const data = await response.json();
+        displayCollection(data, collectionPath);
+    } catch (error) {
+        console.error('Error loading collection data:', error);
+        document.getElementById('collection-description').textContent = 'Unable to load collection data. Please try again later.';
+        document.getElementById('collection-grid').innerHTML = `
+            <div style="grid-column: 1/-1; text-align: center; padding: 4rem 0;">
+                <p>Error loading collection. Please try again later.</p>
+            </div>
+        `;
+    }
 }
 // Display collection datafunction displayCollection(data, collectionPath) {
 // Set collection title and description    document.getElementById('collection-title').textContent = data.title;
