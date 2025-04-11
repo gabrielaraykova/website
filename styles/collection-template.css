@@ -23,6 +23,8 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
     font-weight: 300;
+    padding-top: 80px;
+    /* Adjust this value based on your header height */
 }
 
 a {
@@ -115,6 +117,41 @@ header {
     transition: var(--transition);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
+}
+
+/* Header content styles */
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+/* Navigation styles */
+.nav-desktop {
+    display: flex;
+    gap: 2rem;
+}
+
+/* Make sure the logo and navigation are visible */
+.logo,
+.nav-desktop a {
+    color: var(--secondary-color);
+    opacity: 1;
+}
+
+/* Ensure dropdown content is visible */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(250, 249, 246, 0.95);
+    min-width: 200px;
+    box-shadow: var(--shadow);
+    z-index: 1001;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
 }
 
 /* Collection Styles */
