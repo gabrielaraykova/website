@@ -101,6 +101,8 @@ document.addEventListener('DOMContentLoaded', () => {
 function openDetail(index) {
     const item = window.collectionData.items[index];
     const imagePath = item.image.replace(/^images\//, '');
+
+    // Update detail view content
     document.getElementById('detail-img').src = `./images/${imagePath}`;
     document.getElementById('detail-img').alt = item.title;
     document.getElementById('detail-title').textContent = item.title;
@@ -112,18 +114,14 @@ function openDetail(index) {
     // Show detail view
     const detailView = document.getElementById('product-detail');
     detailView.style.display = 'block';
-    document.body.style.overflow = 'hidden';
-
-    // Update URL without refreshing the page
-    const newUrl = `${window.location.pathname}#item-${index}`;
-    history.pushState({ itemIndex: index }, '', newUrl);
+    document.body.style.overflow = 'hidden'; // Prevent scrolling when detail is open
 }
 
 // Close detail view
 function closeDetail() {
     const detailView = document.getElementById('product-detail');
     detailView.style.display = 'none';
-    document.body.style.overflow = '';
+    document.body.style.overflow = ''; // Restore scrolling
 }
 
 // Add accessibility improvements
@@ -240,4 +238,5 @@ window.addEventListener('scroll', () => {
                 postLoadActions(window.collectionData.items, window.collectionData.path);
             }
         });
-    });
+    })
+})
