@@ -299,9 +299,10 @@ header {
     right: 20px !important;
     width: 40px !important;
     height: 40px !important;
-    background-color: #fff !important;
+    background: none !important;
+    border: 2px solid #fff !important;
     border-radius: 50% !important;
-    color: #000 !important;
+    color: #fff !important;
     font-size: 30px !important;
     line-height: 35px !important;
     text-align: center !important;
@@ -311,7 +312,7 @@ header {
 }
 
 .close-detail:hover {
-    background-color: #f0f0f0;
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 .detail-container {
