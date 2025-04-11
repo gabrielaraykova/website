@@ -106,23 +106,33 @@ p {
     text-align: center;
 }
 
-/* Header */
+/* Header Styles */
 header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
-    background-color: rgba(248, 248, 248, 0.95);
+    background-color: var(--primary-color);
     transition: var(--transition);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: var(--shadow);
 }
 
-/* Header content styles */
 .header-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem 0;
+    padding: 1rem 0;
+    height: 80px;
+    /* Fixed height to match home page */
+}
+
+/* Adjust body padding to account for fixed header */
+body {
+    padding-top: 80px;
+    /* Match the header height */
 }
 
 .logo {
@@ -266,10 +276,13 @@ header {
 /* Collection Styles */
 .collection-description {
     max-width: 800px;
-    margin: 0 auto 5rem;
+    margin: 120px auto 5rem;
+    /* Increased top margin to account for fixed header */
     text-align: center;
     font-style: italic;
     color: #565656;
+    padding: 0 20px;
+    /* Added padding for mobile */
 }
 
 .section-title {
