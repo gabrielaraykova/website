@@ -64,8 +64,9 @@ function closeDetail() {
 document.addEventListener('DOMContentLoaded', loadCollectionData);
 
 // Handle escape key
-window.addEventListener('keydown', function (event) {
-    if (event.key === 'Escape') {
+window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && document.getElementById('product-detail').style.display === 'block') {
         closeDetail();
+        history.back();
     }
-})
+});
