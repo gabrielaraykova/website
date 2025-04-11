@@ -337,3 +337,69 @@ header {
         max-width: 100%;
     }
 }
+
+/* Add these new styles */
+.home-collection {
+    margin-bottom: 4rem;
+}
+
+/* Desktop styles */
+@media screen and (min-width: 769px) {
+    .mobile-only {
+        display: none;
+    }
+
+    .home-collection {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}
+
+/* Mobile styles */
+@media screen and (max-width: 768px) {
+    .desktop-only {
+        display: none;
+    }
+
+    .home-collection {
+        display: block;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .home-collection .collection-item {
+        margin-bottom: 2rem;
+    }
+}
+
+/* Enhance the hover effect */
+.home-collection .collection-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.home-collection .collection-item::after {
+    content: 'View Collection';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: var(--secondary-color);
+    text-align: center;
+    font-family: var(--font-secondary);
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: all 0.4s ease;
+}
+
+.home-collection .collection-item:hover::after {
+    opacity: 1;
+    transform: translateY(0);
+}
