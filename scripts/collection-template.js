@@ -174,10 +174,13 @@ window.addEventListener('scroll', () => {
 });
 
 // Close detail view when clicking escape key
-window.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && document.getElementById('product-detail').style.display === 'block') {
-        closeDetail();
-        history.back();
+window.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape') {
+        const detailView = document.getElementById('product-detail');
+        if (detailView && detailView.style.display === 'block') {
+            closeDetail();
+            history.back();
+        }
     }
 });
 
