@@ -347,6 +347,7 @@ header {
 .home-collection {
     display: grid;
     gap: 2rem;
+    margin-bottom: 4rem;
 }
 
 /* Desktop styles */
@@ -356,6 +357,10 @@ header {
         max-width: 1200px;
         margin: 0 auto;
     }
+
+    .mobile-only {
+        display: none;
+    }
 }
 
 /* Mobile styles */
@@ -364,6 +369,10 @@ header {
         grid-template-columns: 1fr;
         max-width: 400px;
         margin: 0 auto;
+    }
+
+    .desktop-only {
+        display: none;
     }
 }
 
