@@ -345,19 +345,6 @@ header {
     margin-bottom: 4rem;
 }
 
-/* Desktop styles */
-@media screen and (min-width: 769px) {
-    .home-collection {
-        grid-template-columns: repeat(2, 1fr);
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-
-    .desktop-only {
-        display: block;
-    }
-}
-
 /* Mobile styles */
 @media screen and (max-width: 768px) {
     .home-collection {
@@ -368,7 +355,19 @@ header {
 
     .desktop-only {
         display: none !important;
-        /* Added !important to ensure it overrides other styles */
+    }
+}
+
+/* Desktop styles */
+@media screen and (min-width: 769px) {
+    .home-collection {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .desktop-only {
+        display: block;
     }
 }
 
