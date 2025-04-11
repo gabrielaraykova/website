@@ -840,12 +840,12 @@
             const path = window.location.pathname;
             const pathSegments = path.split('/').filter(segment => segment !== '');
 
-            // We expect a path like /collections/collection-name/
-            if (pathSegments.length >= 2 && pathSegments[0] === 'collections') {
-                return pathSegments[1];
+            // Look for 'collections' and the following segment
+            const collectionsIndex = pathSegments.indexOf('collections');
+            if (collectionsIndex !== -1 && pathSegments.length > collectionsIndex + 1) {
+                return pathSegments[collectionsIndex + 1];
             }
 
-            // Default to bulgarian-broderie if we can't determine the collection
             return 'bulgarian-broderie';
         }
 
@@ -853,15 +853,7 @@
         async function loadCollectionData() {
             const collectionPath = getCollectionPathFromUrl();
             try {
-                // Show loading state
-                document.getElementById('collection-grid').innerHTML = `
-                    <div class="loading">
-                        <div class="loading-spinner"></div>
-                        <p>Loading collection items...</p>
-                    </div>
-                `;
-
-                const response = await fetch(`/collections/${collectionPath}/data.json`);
+                const response = await fetch(`./data.json`);  // Since we're already in the collection directory
                 if (!response.ok) {
                     throw new Error(`Failed to load collection data: ${response.status}`);
                 }
@@ -898,7 +890,7 @@
                 itemDiv.className = 'collection-item';
                 itemDiv.setAttribute('data-item-index', index);
                 itemDiv.innerHTML = `
-                    <img src="/collections/${collectionPath}/images/${item.image}" 
+                    <img src="./images/${item.image}" 
                          alt="${item.title}" 
                          class="collection-img">
                 `;

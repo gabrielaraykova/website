@@ -4,13 +4,157 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="refresh" content="0;url=/collections/bulgarian-broderie/">
-    <title>Loading Collection...</title>
+    <title>Bulgarian Broderie | IVANKA RAYKOVA</title>
+    <link rel="stylesheet" href="../../styles/collection-template.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
-    <p>Loading collection... If you are not redirected, <a href="/collections/bulgarian-broderie/">click here</a>.
-    </p>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="../../index.html" class="logo">IVANKA RAYKOVA</a>
+
+                <nav>
+                    <ul class="nav-desktop">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle">Collections</a>
+                            <div class="dropdown-content">
+                                <a href="../bulgarian-broderie/index.html">Bulgarian broderie</a>
+                                <a href="../summer-2025/index.html">Summer 2025</a>
+                                <a href="../winter-2024/index.html">Winter 2024</a>
+                                <a href="../archive/index.html">Archive</a>
+                            </div>
+                        </li>
+                        <li><a href="../../index.html#about">About</a></li>
+                        <li><a href="../../index.html#atelier">Atelier</a></li>
+                        <li><a href="../../index.html#contact">Contact</a></li>
+                    </ul>
+                </nav>
+
+                <button class="mobile-nav-toggle">≡</button>
+
+                <div class="mobile-nav">
+                    <ul>
+                        <li class="dropdown-mobile">
+                            <a href="#">Collections</a>
+                            <ul class="mobile-submenu">
+                                <li><a href="../bulgarian-broderie/index.html">Bulgarian broderie</a></li>
+                                <li><a href="../summer-2025/index.html">Summer 2025</a></li>
+                                <li><a href="../winter-2024/index.html">Winter 2024</a></li>
+                                <li><a href="../archive/index.html">Archive</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="../../index.html#about">About</a></li>
+                        <li><a href="../../index.html#atelier">Atelier</a></li>
+                        <li><a href="../../index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Collection Page Content -->
+    <section class="collection-page">
+        <div class="container">
+            <h1 class="section-title" id="collection-title">Loading Collection...</h1>
+            <p class="collection-description" id="collection-description">Please wait while the collection loads...</p>
+
+            <div class="collection-grid" id="collection-grid">
+                <!-- Collection items will be loaded dynamically -->
+                <div class="loading">
+                    <div class="loading-spinner"></div>
+                    <p>Loading collection items...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Detail View -->
+    <div class="product-detail" id="product-detail">
+        <span class="close-detail" onclick="closeDetail()">&times;</span>
+        <div class="detail-container">
+            <div class="detail-image">
+                <img id="detail-img" src="" alt="">
+            </div>
+            <div class="detail-info">
+                <h2 class="detail-title" id="detail-title"></h2>
+                <div class="detail-description" id="detail-description"></div>
+
+                <div class="detail-specs">
+                    <p class="spec-title">Material Composition:</p>
+                    <p id="detail-material"></p>
+
+                    <p class="spec-title">Fabric:</p>
+                    <p id="detail-fabric"></p>
+
+                    <p class="spec-title">Craftsmanship:</p>
+                    <p id="detail-craftsmanship"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <div class="footer-logo">IVANKA RAYKOVA</div>
+                    <p>Contemporary fashion design celebrating cultural heritage through traditional embroidery and
+                        modern silhouettes.</p>
+
+                    <div class="social-links">
+                        <a href="#" class="social-link">IG</a>
+                        <a href="#" class="social-link">FB</a>
+                        <a href="#" class="social-link">TW</a>
+                        <a href="#" class="social-link">PT</a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-heading">Navigation</h4>
+                    <ul class="footer-nav">
+                        <li><a href="../../index.html">Home</a></li>
+                        <li><a href="../../index.html#about">About</a></li>
+                        <li><a href="../../index.html#atelier">Atelier</a></li>
+                        <li><a href="../../index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-heading">Collections</h4>
+                    <ul class="footer-nav">
+                        <li><a href="../bulgarian-broderie/index.html">Bulgarian broderie</a></li>
+                        <li><a href="../summer-2025/index.html">Summer 2025</a></li>
+                        <li><a href="../winter-2024/index.html">Winter 2024</a></li>
+                        <li><a href="../archive/index.html">Archive</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-heading">Information</h4>
+                    <ul class="footer-nav">
+                        <li><a href="#">Sustainability</a></li>
+                        <li><a href="#">Shipping & Returns</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>&copy; 2025 IVANKA RAYKOVA. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../scripts/collection-template.js"></script>
 </body>
 
 </html>
