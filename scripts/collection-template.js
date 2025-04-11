@@ -1,22 +1,18 @@
 // Load and display collection data
 async function loadCollectionData() {
     try {
-        // Log the fetch attempt
-        console.log('Attempting to load data...');
-
         const response = await fetch('data.json');
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
         const data = await response.json();
 
-        // Log the data to see what we received
-        console.log('Data loaded:', data);
+        // Log the number of items found
+        console.log(`Loading ${data.items.length} items from collection`);
 
         displayCollection(data);
     } catch (error) {
         console.error('Error loading collection data:', error);
-        // Show error on page
         document.getElementById('collection-grid').innerHTML =
             '<p>Error loading collection. Please try again later.</p>';
     }
@@ -24,7 +20,7 @@ async function loadCollectionData() {
 
 // Display collection data
 function displayCollection(data) {
-    if (!data || !data.items) {
+    if (!data || !data.items || !Array.isArray(data.items)) {
         console.error('Invalid data format:', data);
         return;
     }
@@ -35,8 +31,9 @@ function displayCollection(data) {
 
     // Generate grid items
     const gridContainer = document.getElementById('collection-grid');
-    gridContainer.innerHTML = '';
+    gridContainer.innerHTML = ''; // Clear existing content
 
+    // Loop through all items in the data.json
     data.items.forEach((item, index) => {
         const itemDiv = document.createElement('div');
         itemDiv.className = 'collection-item';
@@ -47,10 +44,12 @@ function displayCollection(data) {
                  class="collection-img">
         `;
 
+        // Add click event to show detail view
         itemDiv.addEventListener('click', () => openDetail(index));
         gridContainer.appendChild(itemDiv);
     });
 
+    // Store data for detail view
     window.collectionData = data;
 }
 
@@ -58,7 +57,8 @@ function displayCollection(data) {
 function openDetail(index) {
     const item = window.collectionData.items[index];
 
-    document.getElementById('detail-img').src = `./images/${item.image}`;
+    // Update detail view with item data
+    document.getElementById('detail-img').src = `images/${item.image}`;
     document.getElementById('detail-img').alt = item.title;
     document.getElementById('detail-title').textContent = item.title;
     document.getElementById('detail-description').textContent = item.description;
@@ -66,6 +66,7 @@ function openDetail(index) {
     document.getElementById('detail-fabric').textContent = item.fabric;
     document.getElementById('detail-craftsmanship').textContent = item.craftsmanship;
 
+    // Show the detail view
     document.getElementById('product-detail').style.display = 'block';
     document.body.style.overflow = 'hidden';
 }
@@ -73,7 +74,7 @@ function openDetail(index) {
 // Close detail view
 function closeDetail() {
     document.getElementById('product-detail').style.display = 'none';
-    document.body.style.overflow = '';
+    document.body.style.overflow = 'auto';
 }
 
 // Initialize on page load
