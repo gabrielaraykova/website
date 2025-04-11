@@ -50,13 +50,16 @@ function displayCollection(data, collectionPath) {
         const itemDiv = document.createElement('div');
         itemDiv.className = 'collection-item';
         itemDiv.setAttribute('data-item-index', index);
+
+        // Remove any duplicate 'images/' in the path
+        const imagePath = item.image.replace(/^images\//, '');
+
         itemDiv.innerHTML = `
-            <img src="./images/${item.image.replace('images/', '')}" 
+            <img src="./images/${imagePath}" 
                  alt="${item.title}"
                  class="collection-img">
         `;
 
-        // Use event delegation instead of inline onclick
         itemDiv.addEventListener('click', function () {
             openDetail(index);
         });
@@ -97,9 +100,8 @@ document.addEventListener('DOMContentLoaded', () => {
 // Open detail view for a product
 function openDetail(index) {
     const item = window.collectionData.items[index];
-
-    // Set detail view content
-    document.getElementById('detail-img').src = `./images/${item.image.replace('images/', '')}`;
+    const imagePath = item.image.replace(/^images\//, '');
+    document.getElementById('detail-img').src = `./images/${imagePath}`;
     document.getElementById('detail-img').alt = item.title;
     document.getElementById('detail-title').textContent = item.title;
     document.getElementById('detail-description').innerHTML = item.description;
@@ -159,65 +161,80 @@ function enhanceAccessibility() {
     });
 }
 
-// Header scroll effectconst header = document.querySelector('header');
+// Header scroll effect
+const header = document.querySelector('header');
 window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
-        header.classList.add('scrolled'); header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.05)';
+        header.classList.add('scrolled');
+        header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.05)';
     } else {
         header.classList.remove('scrolled');
         header.style.boxShadow = 'none';
     }
 });
 
-// Close detail view when clicking escape keywindow.addEventListener('keydown', (e) => {
-if (e.key === 'Escape' && document.getElementById('product-detail').style.display === 'block') {
-    closeDetail();
-    history.back();
-}
-
-// Add subtle parallax scrollingwindow.addEventListener('scroll', () => {
-const scrollPosition = window.scrollY; const items = document.querySelectorAll('.collection-item');
-items.forEach((item, index) => {
-    const offset = (index % 2 === 0) ? 0.05 : -0.05;
-    item.style.transform = `translateY(${scrollPosition * offset}px)`;
-});
-
-// Preload images for smoother experiencefunction preloadImages(collectionPath, images) {
-images.forEach(image => {
-    const img = new Image();
-    img.src = `/collections/${collectionPath}/images/${image.image}`;
-});
-
-// Add accessibility improvementsfunction enhanceAccessibility() {
-// Make collection items keyboard accessible    const collectionItems = document.querySelectorAll('.collection-item');
-collectionItems.forEach(item => {
-    item.setAttribute('tabindex', '0');
-    item.setAttribute('role', 'button'); item.setAttribute('aria-label', `View ${item.querySelector('img').alt} details`);
-    // Handle keyboard event
-    item.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault(); const index = item.getAttribute('data-item-index');
-            openDetail(parseInt(index));
-        }
-    });
-});
-
-// Make close button more accessible
-const closeButton = document.querySelector('.close-detail'); closeButton.setAttribute('aria-label', 'Close detail view');
-closeButton.setAttribute('role', 'button'); closeButton.setAttribute('tabindex', '0');
-// Handle keyboard event for close button
-closeButton.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault(); closeDetail();
+// Close detail view when clicking escape key
+window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && document.getElementById('product-detail').style.display === 'block') {
+        closeDetail();
         history.back();
     }
 });
 
-// Initialize everything
-document.addEventListener('DOMContentLoaded', () => {
-    loadCollectionData().then(() => {
-        if (window.collectionData) {
-            postLoadActions(window.collectionData.items, window.collectionData.path);
-        }
+// Add subtle parallax scrolling
+window.addEventListener('scroll', () => {
+    const scrollPosition = window.scrollY; const items = document.querySelectorAll('.collection-item');
+    items.forEach((item, index) => {
+        const offset = (index % 2 === 0) ? 0.05 : -0.05;
+        item.style.transform = `translateY(${scrollPosition * offset}px)`;
     });
-});
+
+    // Preload images for smoother experience
+    function preloadImages(collectionPath, images) {
+        images.forEach(image => {
+            const img = new Image();
+            img.src = `/collections/${collectionPath}/images/${image.image}`;
+        });
+    }
+
+    // Add accessibility improvements
+    function enhanceAccessibility() {
+        // Make collection items keyboard accessible
+        const collectionItems = document.querySelectorAll('.collection-item');
+        collectionItems.forEach(item => {
+            item.setAttribute('tabindex', '0');
+            item.setAttribute('role', 'button');
+            item.setAttribute('aria-label', `View ${item.querySelector('img').alt} details`);
+            // Handle keyboard event
+            item.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    const index = item.getAttribute('data-item-index');
+                    openDetail(parseInt(index));
+                }
+            });
+        });
+
+        // Make close button more accessible
+        const closeButton = document.querySelector('.close-detail');
+        closeButton.setAttribute('aria-label', 'Close detail view');
+        closeButton.setAttribute('role', 'button');
+        closeButton.setAttribute('tabindex', '0');
+        // Handle keyboard event for close button
+        closeButton.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                closeDetail();
+                history.back();
+            }
+        });
+    }
+
+    // Initialize everything
+    document.addEventListener('DOMContentLoaded', () => {
+        loadCollectionData().then(() => {
+            if (window.collectionData) {
+                postLoadActions(window.collectionData.items, window.collectionData.path);
+            }
+        });
+    });
