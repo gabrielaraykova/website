@@ -158,6 +158,7 @@ function enhanceAccessibility() {
         }
     });
 }
+
 // Header scroll effectconst header = document.querySelector('header');
 window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
@@ -167,25 +168,26 @@ window.addEventListener('scroll', () => {
         header.style.boxShadow = 'none';
     }
 });
+
 // Close detail view when clicking escape keywindow.addEventListener('keydown', (e) => {
 if (e.key === 'Escape' && document.getElementById('product-detail').style.display === 'block') {
     closeDetail();
     history.back();
 }
-});
+
 // Add subtle parallax scrollingwindow.addEventListener('scroll', () => {
 const scrollPosition = window.scrollY; const items = document.querySelectorAll('.collection-item');
 items.forEach((item, index) => {
     const offset = (index % 2 === 0) ? 0.05 : -0.05;
     item.style.transform = `translateY(${scrollPosition * offset}px)`;
 });
-});
+
 // Preload images for smoother experiencefunction preloadImages(collectionPath, images) {
 images.forEach(image => {
     const img = new Image();
     img.src = `/collections/${collectionPath}/images/${image.image}`;
 });
-}
+
 // Add accessibility improvementsfunction enhanceAccessibility() {
 // Make collection items keyboard accessible    const collectionItems = document.querySelectorAll('.collection-item');
 collectionItems.forEach(item => {
@@ -199,6 +201,7 @@ collectionItems.forEach(item => {
         }
     });
 });
+
 // Make close button more accessible
 const closeButton = document.querySelector('.close-detail'); closeButton.setAttribute('aria-label', 'Close detail view');
 closeButton.setAttribute('role', 'button'); closeButton.setAttribute('tabindex', '0');
@@ -208,7 +211,8 @@ closeButton.addEventListener('keydown', (e) => {
         e.preventDefault(); closeDetail();
         history.back();
     }
-});}
+});
+
 // Initialize everything
 document.addEventListener('DOMContentLoaded', () => {
     loadCollectionData().then(() => {
@@ -217,103 +221,3 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
