@@ -352,6 +352,10 @@ header {
     .home-collection {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .desktop-only {
+        display: block;
+    }
 }
 
 /* Mobile styles */
@@ -359,6 +363,10 @@ header {
     .home-collection {
         grid-template-columns: 1fr;
         max-width: 400px;
+    }
+
+    .desktop-only {
+        display: none;
     }
 }
 
