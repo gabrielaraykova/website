@@ -80,10 +80,9 @@ function closeDetail() {
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', loadCollectionData);
 
-// Handle escape key
+// Handle escape key - remove the history.back()
 window.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && document.getElementById('product-detail').style.display === 'block') {
         closeDetail();
-        history.back();
     }
 });
