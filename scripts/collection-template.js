@@ -51,7 +51,7 @@ function displayCollection(data, collectionPath) {
         itemDiv.className = 'collection-item';
         itemDiv.setAttribute('data-item-index', index);
         itemDiv.innerHTML = `
-            <img src="./images/${item.image}" 
+            <img src="./images/${item.image.replace('images/', '')}" 
                  alt="${item.title}"
                  class="collection-img">
         `;
@@ -99,7 +99,7 @@ function openDetail(index) {
     const item = window.collectionData.items[index];
 
     // Set detail view content
-    document.getElementById('detail-img').src = `./images/${item.image}`;
+    document.getElementById('detail-img').src = `./images/${item.image.replace('images/', '')}`;
     document.getElementById('detail-img').alt = item.title;
     document.getElementById('detail-title').textContent = item.title;
     document.getElementById('detail-description').innerHTML = item.description;
