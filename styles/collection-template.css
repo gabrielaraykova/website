@@ -343,16 +343,16 @@ header {
     margin-bottom: 4rem;
 }
 
+/* Home collection styles */
+.home-collection {
+    display: grid;
+    gap: 2rem;
+}
+
 /* Desktop styles */
 @media screen and (min-width: 769px) {
-    .mobile-only {
-        display: none;
-    }
-
     .home-collection {
-        display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: 2rem;
         max-width: 1200px;
         margin: 0 auto;
     }
@@ -360,46 +360,26 @@ header {
 
 /* Mobile styles */
 @media screen and (max-width: 768px) {
-    .desktop-only {
-        display: none;
-    }
-
     .home-collection {
-        display: block;
+        grid-template-columns: 1fr;
         max-width: 400px;
         margin: 0 auto;
     }
-
-    .home-collection .collection-item {
-        margin-bottom: 2rem;
-    }
 }
 
-/* Enhance the hover effect */
 .home-collection .collection-item {
     position: relative;
     overflow: hidden;
+    cursor: pointer;
 }
 
-.home-collection .collection-item::after {
-    content: 'View Collection';
-    position: absolute;
-    bottom: 0;
-    left: 0;
+.home-collection .collection-item img {
     width: 100%;
-    padding: 1rem;
-    background-color: rgba(255, 255, 255, 0.9);
-    color: var(--secondary-color);
-    text-align: center;
-    font-family: var(--font-secondary);
-    font-size: 1.1rem;
-    letter-spacing: 1px;
-    opacity: 0;
-    transform: translateY(100%);
-    transition: all 0.4s ease;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
 }
 
-.home-collection .collection-item:hover::after {
-    opacity: 1;
-    transform: translateY(0);
+.home-collection .collection-item:hover img {
+    transform: scale(1.05);
 }
