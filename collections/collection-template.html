@@ -1,86 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Collection | IVANKA RAYKOVA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500&display=swap"
+        rel="stylesheet">
     <style>
         /* Base Styles */
         :root {
-            --primary-color: #f8f8f8;
+            --primary-color: #faf9f6;
             --secondary-color: #212121;
-            --accent-color: #e0e0e0;
-            --font-main: 'Arial', sans-serif;
-            --font-secondary: 'Times New Roman', serif;
+            --accent-color: #e9e5dc;
+            --border-color: #e0d9cb;
+            --font-main: 'Montserrat', sans-serif;
+            --font-secondary: 'Cormorant Garamond', serif;
             --transition: all 0.3s ease;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+
         body {
             font-family: var(--font-main);
             color: var(--secondary-color);
             background-color: var(--primary-color);
             line-height: 1.6;
             overflow-x: hidden;
+            font-weight: 300;
         }
+
         a {
             text-decoration: none;
             color: inherit;
+            transition: var(--transition);
         }
+
         ul {
             list-style: none;
         }
+
         img {
             max-width: 100%;
             height: auto;
             display: block;
         }
-        button, .btn {
+
+        button,
+        .btn {
             background: none;
             border: none;
             cursor: pointer;
             font-family: inherit;
             font-size: inherit;
             padding: 0;
+            transition: var(--transition);
         }
+
         .container {
             width: 100%;
             max-width: 1400px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 30px;
         }
+
         /* Typography */
-        h1, h2, h3, h4, h5 {
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
             font-weight: normal;
             line-height: 1.2;
+            font-family: var(--font-secondary);
         }
+
         h1 {
-            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-size: clamp(2.5rem, 6vw, 4rem);
             letter-spacing: 1px;
+            font-weight: 400;
         }
+
         h2 {
-            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
             margin-bottom: 2rem;
             letter-spacing: 0.5px;
+            font-weight: 400;
         }
+
         h3 {
-            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            font-size: clamp(1.4rem, 3vw, 2rem);
             margin-bottom: 1rem;
+            font-weight: 400;
         }
+
         p {
             margin-bottom: 1.5rem;
-            font-size: clamp(0.9rem, 2vw, 1rem);
+            font-size: clamp(0.95rem, 2vw, 1.05rem);
             letter-spacing: 0.3px;
+            line-height: 1.8;
         }
+
         .uppercase {
             text-transform: uppercase;
         }
+
         .text-center {
             text-align: center;
         }
+
         /* Header */
         header {
             position: fixed;
@@ -88,20 +124,33 @@
             left: 0;
             width: 100%;
             z-index: 1000;
-            background-color: rgba(248, 248, 248, 0.95);
+            background-color: rgba(250, 249, 246, 0.95);
             transition: var(--transition);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
         }
+
         .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 1.5rem 0;
+            border-bottom: 1px solid transparent;
+            transition: var(--transition);
         }
+
+        .scrolled .header-content {
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
         .logo {
             font-family: var(--font-secondary);
             font-size: 1.8rem;
             letter-spacing: 2px;
+            font-weight: 500;
         }
+
         /* IMPORTANT: Hide the mobile toggle button by default (for desktop) */
         .mobile-nav-toggle {
             display: none;
@@ -111,6 +160,7 @@
             cursor: pointer;
             z-index: 2000;
         }
+
         /* Mobile Navigation */
         .mobile-nav {
             position: fixed;
@@ -124,65 +174,119 @@
             z-index: 1500;
             overflow-y: auto;
         }
+
         .mobile-nav.active {
             right: 0;
         }
+
         .mobile-nav li {
             margin-bottom: 1.5rem;
             font-size: 1.2rem;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
+
         .mobile-submenu {
             display: none;
             margin: 1rem 0 0.5rem 1rem;
             padding-left: 1rem;
             border-left: 1px solid var(--accent-color);
         }
+
         .mobile-submenu.active {
             display: block;
         }
+
         .mobile-submenu li {
             margin-bottom: 1rem;
             font-size: 1rem;
         }
-        .dropdown-mobile > a::after {
+
+        .dropdown-mobile>a::after {
             content: ' +';
             font-size: 1.2rem;
         }
+
         /* Collections */
         .collection-page {
-            padding: 8rem 0;
+            padding: 10rem 0 8rem;
         }
+
         .collection-description {
             max-width: 800px;
-            margin: 0 auto 4rem;
+            margin: 0 auto 5rem;
             text-align: center;
+            font-style: italic;
+            color: #565656;
         }
+
         .section-title {
             text-align: center;
             margin-bottom: 2rem;
             font-family: var(--font-secondary);
+            position: relative;
+            padding-bottom: 1.5rem;
         }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 1px;
+            background-color: var(--border-color);
+        }
+
         .collection-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2.5rem;
         }
+
         .collection-item {
             position: relative;
             overflow: hidden;
             transition: var(--transition);
             cursor: pointer;
+            box-shadow: var(--shadow);
+            border-radius: 2px;
         }
+
         .collection-img {
             aspect-ratio: 2/3;
             object-fit: cover;
-            transition: transform 0.5s ease;
+            transition: all 0.6s ease;
         }
+
         .collection-item:hover .collection-img {
-            transform: scale(1.03);
+            transform: scale(1.05);
         }
+
+        .collection-item::after {
+            content: 'View Details';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 1rem;
+            background-color: rgba(255, 255, 255, 0.9);
+            color: var(--secondary-color);
+            text-align: center;
+            font-family: var(--font-secondary);
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            opacity: 0;
+            transform: translateY(100%);
+            transition: all 0.4s ease;
+        }
+
+        .collection-item:hover::after {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
         /* Detail Page */
         .product-detail {
             display: none;
@@ -191,54 +295,106 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(255, 255, 255, 0.95);
+            background-color: rgba(250, 249, 246, 0.98);
             z-index: 2000;
             overflow-y: auto;
             padding: 6rem 2rem 2rem;
+            opacity: 0;
+            transition: opacity 0.4s ease;
         }
+
+        .product-detail.active {
+            opacity: 1;
+        }
+
         .detail-container {
             max-width: 1200px;
             margin: 0 auto;
             display: flex;
             flex-wrap: wrap;
-            gap: 4rem;
+            gap: 5rem;
         }
+
         .detail-image {
-            flex: 1;
+            flex: 1.2;
             min-width: 300px;
         }
+
         .detail-image img {
             width: 100%;
             height: auto;
-            max-height: 80vh;
+            max-height: 85vh;
             object-fit: contain;
+            box-shadow: var(--shadow);
         }
+
         .detail-info {
-            flex: 1;
+            flex: 0.8;
             min-width: 300px;
+            padding-top: 1rem;
         }
+
         .detail-title {
             font-family: var(--font-secondary);
-            margin-bottom: 1.5rem;
-            font-size: 2rem;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+            position: relative;
+            padding-bottom: 1rem;
         }
+
+        .detail-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 1px;
+            background-color: var(--border-color);
+        }
+
         .detail-description {
-            margin-bottom: 2rem;
+            margin-bottom: 3rem;
+            font-size: 1.05rem;
+            line-height: 1.8;
         }
+
         .detail-specs {
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
+            padding: 2rem;
+            background-color: rgba(233, 229, 220, 0.4);
+            border-left: 3px solid var(--border-color);
         }
+
         .spec-title {
-            font-weight: bold;
+            font-weight: 500;
             margin-bottom: 0.5rem;
+            font-family: var(--font-secondary);
+            font-size: 1.1rem;
         }
+
         .close-detail {
             position: absolute;
             top: 2rem;
             right: 2rem;
             font-size: 2rem;
             cursor: pointer;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            transition: all 0.3s ease;
+            border: 1px solid var(--border-color);
         }
+
+        .close-detail:hover {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+        }
+
         /* Modal */
         .modal {
             display: none;
@@ -253,12 +409,14 @@
             justify-content: center;
             align-items: center;
         }
+
         .modal-content {
             margin: auto;
             display: block;
             max-width: 90%;
             max-height: 90%;
         }
+
         .close-modal {
             position: absolute;
             top: 15px;
@@ -269,76 +427,94 @@
             transition: 0.3s;
             cursor: pointer;
         }
+
         .close-modal:hover,
         .close-modal:focus {
             color: #bbb;
             text-decoration: none;
             cursor: pointer;
         }
+
         /* Footer */
         footer {
-            padding: 4rem 0;
+            padding: 5rem 0 4rem;
             background-color: var(--primary-color);
+            border-top: 1px solid var(--border-color);
         }
+
         .footer-content {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
-            gap: 2rem;
+            gap: 3rem;
         }
+
         .footer-logo {
             font-family: var(--font-secondary);
             font-size: 1.5rem;
             letter-spacing: 2px;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
         }
+
         .footer-col {
             flex: 1;
             min-width: 200px;
         }
+
         .footer-heading {
             margin-bottom: 1.5rem;
             font-size: 0.9rem;
             letter-spacing: 1px;
             text-transform: uppercase;
+            font-family: var(--font-main);
+            font-weight: 400;
         }
+
         .footer-nav li {
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.7rem;
             font-size: 0.9rem;
         }
+
         .footer-nav a:hover {
-            text-decoration: underline;
+            opacity: 0.7;
         }
+
         .social-links {
             display: flex;
             gap: 1rem;
-            margin-top: 1rem;
+            margin-top: 1.5rem;
         }
+
         .social-link {
             display: inline-block;
             width: 40px;
             height: 40px;
             line-height: 40px;
             text-align: center;
-            border: 1px solid var(--secondary-color);
+            border: 1px solid var(--border-color);
             transition: var(--transition);
         }
+
         .social-link:hover {
             background-color: var(--secondary-color);
             color: var(--primary-color);
         }
+
         .copyright {
             margin-top: 4rem;
             padding-top: 2rem;
-            border-top: 1px solid rgba(33, 33, 33, 0.1);
+            border-top: 1px solid var(--border-color);
             text-align: center;
             font-size: 0.8rem;
+            color: #777;
         }
+
         /* Desktop Navigation */
         .nav-desktop {
             display: flex;
             align-items: center;
         }
+
         .nav-desktop li {
             margin-left: 2.5rem;
             font-size: 0.9rem;
@@ -346,13 +522,16 @@
             text-transform: uppercase;
             position: relative;
         }
+
         .nav-desktop a {
             position: relative;
             transition: var(--transition);
         }
+
         .nav-desktop a:hover {
             opacity: 0.7;
         }
+
         .nav-desktop a::after {
             content: '';
             position: absolute;
@@ -363,20 +542,24 @@
             background-color: var(--secondary-color);
             transition: var(--transition);
         }
+
         .nav-desktop a:hover::after {
             width: 100%;
         }
+
         /* Dropdown menu styles */
         .dropdown {
             position: relative;
             display: inline-block;
         }
+
         .dropdown-toggle::after {
             content: '▼';
             font-size: 0.7rem;
             margin-left: 5px;
             vertical-align: middle;
         }
+
         .dropdown-content {
             display: none;
             position: absolute;
@@ -384,13 +567,17 @@
             left: 0;
             background-color: var(--primary-color);
             min-width: 200px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.05);
             z-index: 1000;
             margin-top: 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 2px;
         }
+
         .dropdown:hover .dropdown-content {
             display: block;
         }
+
         .dropdown-content a {
             color: var(--secondary-color);
             padding: 12px 16px;
@@ -399,44 +586,120 @@
             font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 1px;
+            border-bottom: 1px solid var(--border-color);
         }
+
+        .dropdown-content a:last-child {
+            border-bottom: none;
+        }
+
         .dropdown-content a:hover {
             background-color: var(--accent-color);
         }
+
         .dropdown-toggle:hover::after {
             opacity: 0.7;
         }
+
+        /* Loading animation */
+        .loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 4rem 0;
+        }
+
+        .loading-spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid var(--border-color);
+            border-radius: 50%;
+            border-top-color: var(--secondary-color);
+            animation: spinner 0.8s linear infinite;
+            margin-bottom: 1rem;
+        }
+
+        @keyframes spinner {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
         /* Mobile-only styles */
         @media screen and (max-width: 768px) {
             .nav-desktop {
                 display: none;
             }
+
             .mobile-nav-toggle {
                 display: block;
             }
+
             .detail-container {
                 flex-direction: column;
                 gap: 2rem;
             }
+
+            .collection-grid {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+                gap: 1.5rem;
+            }
+
+            .product-detail {
+                padding: 5rem 1rem 1rem;
+            }
+
+            .detail-image img {
+                max-height: 70vh;
+            }
+
+            .detail-title {
+                font-size: 2rem;
+            }
+
+            .detail-specs {
+                padding: 1.5rem;
+            }
         }
+
         /* Hide mobile nav on larger screens */
         @media screen and (min-width: 769px) {
             .mobile-nav {
                 display: none !important;
             }
+
             .mobile-nav-toggle {
                 display: none !important;
             }
         }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.5s ease forwards;
+        }
     </style>
 </head>
+
 <body>
     <!-- Header -->
     <header>
         <div class="container">
             <div class="header-content">
                 <a href="/index.html" class="logo">IVANKA RAYKOVA</a>
-                
+
                 <nav>
                     <ul class="nav-desktop">
                         <li class="dropdown">
@@ -453,18 +716,18 @@
                         <li><a href="/index.html#contact">Contact</a></li>
                     </ul>
                 </nav>
-                
+
                 <button class="mobile-nav-toggle">≡</button>
-                
+
                 <div class="mobile-nav">
                     <ul>
                         <li class="dropdown-mobile">
                             <a href="#">Collections</a>
                             <ul class="mobile-submenu">
-                                <a href="/collections/bulgarian-broderie/">Bulgarian broderie</a>
-                                <a href="/collections/summer-2025/">Summer 2025</a>
-                                <a href="/collections/winter-2024/">Winter 2024</a>
-                                <a href="/collections/archive/">Archive</a>
+                                <li><a href="/collections/bulgarian-broderie/">Bulgarian broderie</a></li>
+                                <li><a href="/collections/summer-2025/">Summer 2025</a></li>
+                                <li><a href="/collections/winter-2024/">Winter 2024</a></li>
+                                <li><a href="/collections/archive/">Archive</a></li>
                             </ul>
                         </li>
                         <li><a href="/index.html#about">About</a></li>
@@ -481,9 +744,13 @@
         <div class="container">
             <h1 class="section-title" id="collection-title">Loading Collection...</h1>
             <p class="collection-description" id="collection-description">Please wait while the collection loads...</p>
-            
+
             <div class="collection-grid" id="collection-grid">
                 <!-- Collection items will be loaded dynamically -->
+                <div class="loading">
+                    <div class="loading-spinner"></div>
+                    <p>Loading collection items...</p>
+                </div>
             </div>
         </div>
     </section>
@@ -498,14 +765,14 @@
             <div class="detail-info">
                 <h2 class="detail-title" id="detail-title"></h2>
                 <div class="detail-description" id="detail-description"></div>
-                
+
                 <div class="detail-specs">
                     <p class="spec-title">Material Composition:</p>
                     <p id="detail-material"></p>
-                    
+
                     <p class="spec-title">Fabric:</p>
                     <p id="detail-fabric"></p>
-                    
+
                     <p class="spec-title">Craftsmanship:</p>
                     <p id="detail-craftsmanship"></p>
                 </div>
@@ -519,8 +786,9 @@
             <div class="footer-content">
                 <div class="footer-col">
                     <div class="footer-logo">IVANKA RAYKOVA</div>
-                    <p>Contemporary fashion design celebrating cultural heritage through traditional embroidery and modern silhouettes.</p>
-                    
+                    <p>Contemporary fashion design celebrating cultural heritage through traditional embroidery and
+                        modern silhouettes.</p>
+
                     <div class="social-links">
                         <a href="#" class="social-link">IG</a>
                         <a href="#" class="social-link">FB</a>
@@ -528,7 +796,7 @@
                         <a href="#" class="social-link">PT</a>
                     </div>
                 </div>
-                
+
                 <div class="footer-col">
                     <h4 class="footer-heading">Navigation</h4>
                     <ul class="footer-nav">
@@ -538,7 +806,7 @@
                         <li><a href="/index.html#contact">Contact</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="footer-col">
                     <h4 class="footer-heading">Collections</h4>
                     <ul class="footer-nav">
@@ -548,7 +816,7 @@
                         <li><a href="/collections/archive/">Archive</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="footer-col">
                     <h4 class="footer-heading">Information</h4>
                     <ul class="footer-nav">
@@ -559,7 +827,7 @@
                     </ul>
                 </div>
             </div>
-            
+
             <div class="copyright">
                 <p>&copy; 2025 IVANKA RAYKOVA. All Rights Reserved.</p>
             </div>
@@ -571,20 +839,28 @@
         function getCollectionPathFromUrl() {
             const path = window.location.pathname;
             const pathSegments = path.split('/').filter(segment => segment !== '');
-            
+
             // We expect a path like /collections/collection-name/
             if (pathSegments.length >= 2 && pathSegments[0] === 'collections') {
                 return pathSegments[1];
             }
-            
+
             // Default to bulgarian-broderie if we can't determine the collection
             return 'bulgarian-broderie';
         }
-        
+
         // Load collection data
         async function loadCollectionData() {
             const collectionPath = getCollectionPathFromUrl();
             try {
+                // Show loading state
+                document.getElementById('collection-grid').innerHTML = `
+                    <div class="loading">
+                        <div class="loading-spinner"></div>
+                        <p>Loading collection items...</p>
+                    </div>
+                `;
+
                 const response = await fetch(`/collections/${collectionPath}/data.json`);
                 if (!response.ok) {
                     throw new Error(`Failed to load collection data: ${response.status}`);
@@ -593,46 +869,75 @@
                 displayCollection(data, collectionPath);
             } catch (error) {
                 console.error('Error loading collection data:', error);
-                document.getElementById('collection-description').textContent = 
+                document.getElementById('collection-description').textContent =
                     'Unable to load collection data. Please try again later.';
+                document.getElementById('collection-grid').innerHTML = `
+                    <div style="grid-column: 1/-1; text-align: center; padding: 4rem 0;">
+                        <p>Error loading collection. Please try again later.</p>
+                    </div>
+                `;
             }
         }
-        
+
         // Display collection data
         function displayCollection(data, collectionPath) {
             // Set collection title and description
             document.getElementById('collection-title').textContent = data.title;
             document.getElementById('collection-description').textContent = data.description;
             document.title = `${data.title} | IVANKA RAYKOVA`;
-            
+
             // Generate grid items
             const gridContainer = document.getElementById('collection-grid');
             gridContainer.innerHTML = '';
-            
+
+            // Use fragment for better performance
+            const fragment = document.createDocumentFragment();
+
             data.items.forEach((item, index) => {
                 const itemDiv = document.createElement('div');
                 itemDiv.className = 'collection-item';
+                itemDiv.setAttribute('data-item-index', index);
                 itemDiv.innerHTML = `
                     <img src="/collections/${collectionPath}/images/${item.image}" 
                          alt="${item.title}" 
-                         class="collection-img" 
-                         onclick="openDetail(${index})">
+                         class="collection-img">
                 `;
-                gridContainer.appendChild(itemDiv);
+
+                // Use event delegation instead of inline onclick
+                itemDiv.addEventListener('click', function () {
+                    openDetail(index);
+                });
+
+                fragment.appendChild(itemDiv);
             });
-            
+
+            gridContainer.appendChild(fragment);
+
+            // Fade in grid items with staggered delay for a nice effect
+            const items = document.querySelectorAll('.collection-item');
+            items.forEach((item, index) => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(20px)';
+                item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+
+                setTimeout(() => {
+                    item.style.opacity = '1';
+                    item.style.transform = 'translateY(0)';
+                }, 100 + (index * 50)); // Stagger the animation
+            });
+
             // Store the collection data globally for detail view access
             window.collectionData = {
                 items: data.items,
                 path: collectionPath
             };
         }
-        
+
         // Open detail view for a product
         function openDetail(index) {
             const item = window.collectionData.items[index];
             const collectionPath = window.collectionData.path;
-            
+
             // Set detail view content
             document.getElementById('detail-img').src = `/collections/${collectionPath}/images/${item.image}`;
             document.getElementById('detail-img').alt = item.title;
@@ -641,27 +946,51 @@
             document.getElementById('detail-material').textContent = item.material;
             document.getElementById('detail-fabric').textContent = item.fabric;
             document.getElementById('detail-craftsmanship').textContent = item.craftsmanship;
-            
-            // Show detail view
-            document.getElementById('product-detail').style.display = 'block';
+
+            // Update browser history to allow back button to close detail view
+            history.pushState({ detailView: true, itemIndex: index }, document.title);
+
+            // Show detail view with transition
+            const detailView = document.getElementById('product-detail');
+            detailView.style.display = 'block';
+
+            // Force a reflow to ensure the transition works
+            void detailView.offsetWidth;
+
+            detailView.classList.add('active');
             document.body.style.overflow = 'hidden'; // Prevent scrolling
         }
-        
+
         // Close detail view
         function closeDetail() {
-            document.getElementById('product-detail').style.display = 'none';
-            document.body.style.overflow = 'auto'; // Restore scrolling
+            const detailView = document.getElementById('product-detail');
+
+            // Animate out
+            detailView.classList.remove('active');
+
+            // Wait for animation to complete before hiding
+            setTimeout(() => {
+                detailView.style.display = 'none';
+                document.body.style.overflow = 'auto'; // Restore scrolling
+            }, 400); // Match the CSS transition duration
         }
-        
+
+        // Handle browser back button to close detail view
+        window.addEventListener('popstate', function (event) {
+            if (document.getElementById('product-detail').style.display === 'block') {
+                closeDetail();
+            }
+        });
+
         // Mobile Navigation
         const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
         const mobileNav = document.querySelector('.mobile-nav');
-        
+
         mobileNavToggle.addEventListener('click', () => {
             mobileNav.classList.toggle('active');
             mobileNavToggle.textContent = mobileNav.classList.contains('active') ? '×' : '≡';
         });
-        
+
         // Close mobile nav when clicking a link
         const mobileNavLinks = document.querySelectorAll('.mobile-nav a');
         mobileNavLinks.forEach(link => {
@@ -670,40 +999,107 @@
                 mobileNavToggle.textContent = '≡';
             });
         });
-        
+
         // Handle mobile dropdown menu
         const mobileDropdownToggle = document.querySelector('.dropdown-mobile > a');
         const mobileSubmenu = document.querySelector('.mobile-submenu');
-        
+
         if (mobileDropdownToggle && mobileSubmenu) {
             mobileDropdownToggle.addEventListener('click', (e) => {
                 e.preventDefault();
                 mobileSubmenu.classList.toggle('active');
-                mobileDropdownToggle.textContent = mobileSubmenu.classList.contains('active') 
-                    ? 'Collections -' 
+                mobileDropdownToggle.textContent = mobileSubmenu.classList.contains('active')
+                    ? 'Collections -'
                     : 'Collections +';
             });
         }
-        
+
         // Header scroll effect
         const header = document.querySelector('header');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
-                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+                header.classList.add('scrolled');
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.05)';
             } else {
+                header.classList.remove('scrolled');
                 header.style.boxShadow = 'none';
             }
         });
-        
+
         // Close detail view when clicking escape key
         window.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
+            if (e.key === 'Escape' && document.getElementById('product-detail').style.display === 'block') {
                 closeDetail();
+                // Update browser history to match
+                history.back();
             }
         });
-        
-        // Load collection data when page loads
-        document.addEventListener('DOMContentLoaded', loadCollectionData);
+
+        // Add some subtle parallax scrolling to enhance the experience
+        window.addEventListener('scroll', () => {
+            const scrollPosition = window.scrollY;
+            const items = document.querySelectorAll('.collection-item');
+            items.forEach((item, index) => {
+                const offset = (index % 2 === 0) ? 0.05 : -0.05;
+                item.style.transform = `translateY(${scrollPosition * offset}px)`;
+            });
+        });
+
+        // Preload images for smoother experience
+        function preloadImages(collectionPath, images) {
+            images.forEach(image => {
+                const img = new Image();
+                img.src = `/collections/${collectionPath}/images/${image.image}`;
+            });
+        }
+
+        // Add accessibility improvements
+        function enhanceAccessibility() {
+            // Make collection items keyboard accessible
+            const collectionItems = document.querySelectorAll('.collection-item');
+            collectionItems.forEach(item => {
+                item.setAttribute('tabindex', '0');
+                item.setAttribute('role', 'button');
+                item.setAttribute('aria-label', `View ${item.querySelector('img').alt} details`);
+
+                // Handle keyboard event
+                item.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        const index = item.getAttribute('data-item-index');
+                        openDetail(parseInt(index));
+                    }
+                });
+            });
+
+            // Make close button more accessible
+            const closeButton = document.querySelector('.close-detail');
+            closeButton.setAttribute('aria-label', 'Close detail view');
+            closeButton.setAttribute('role', 'button');
+            closeButton.setAttribute('tabindex', '0');
+
+            // Handle keyboard event for close button
+            closeButton.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    closeDetail();
+                    history.back();
+                }
+            });
+        }
+
+        // After loading collection, enhance accessibility
+        function postLoadActions(data, collectionPath) {
+            enhanceAccessibility();
+            preloadImages(collectionPath, data.items);
+        }
+
+        // Initialize everything
+        document.addEventListener('DOMContentLoaded', () => {
+            loadCollectionData().then(() => {
+                if (window.collectionData) {
+                    postLoadActions(window.collectionData.items, window.collectionData.path);
+                }
+            });
+        });
     </script>
-</body>
-</html>
