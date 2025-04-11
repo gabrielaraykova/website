@@ -702,46 +702,32 @@
    <section id="collections" class="collections">
       <div class="container">
          <h2 class="section-title">Bulgarian broderie</h2>
-         <div class="collection-grid home-collection">
-            <!-- Desktop: Show first 4 images -->
-            <div class="collection-item desktop-only">
-               <a href="collections/bulgarian-broderie/index.html">
-                  <img src="images/1.jpg" alt="IVANKA RAYKOVA Collection - White embroidered dress"
-                     class="collection-img">
-               </a>
-            </div>
-            <div class="collection-item desktop-only">
-               <a href="collections/bulgarian-broderie/index.html">
-                  <img src="images/2.jpg" alt="IVANKA RAYKOVA Collection - White embroidered set"
-                     class="collection-img">
-               </a>
-            </div>
-            <div class="collection-item desktop-only">
-               <a href="collections/bulgarian-broderie/index.html">
-                  <img src="images/3.jpg" alt="IVANKA RAYKOVA Collection - White embroidered outfit"
-                     class="collection-img">
-               </a>
-            </div>
-            <div class="collection-item desktop-only">
-               <a href="collections/bulgarian-broderie/index.html">
-                  <img src="images/4.jpg" alt="IVANKA RAYKOVA Collection" class="collection-img">
-               </a>
-            </div>
-
-            <!-- Mobile: Show only first image -->
-            <div class="collection-item mobile-only">
-               <a href="collections/bulgarian-broderie/index.html">
-                  <img src="images/1.jpg" alt="IVANKA RAYKOVA Collection - Bulgarian broderie" class="collection-img">
-               </a>
-            </div>
-         </div>
-         <!-- Modal for image zoom -->
-         <div id="imageModal" class="modal">
-            <span class="close-modal" onclick="closeModal()">&times;</span>
-            <img class="modal-content" id="modalImg">
+         <div class="collection-grid home-collection" id="home-collection-grid">
+            <!-- Images will be loaded dynamically -->
          </div>
       </div>
    </section>
+   <!-- Product Detail View -->
+   <div class="product-detail" id="product-detail">
+      <span class="close-detail" onclick="closeDetail()">&times;</span>
+      <div class="detail-container">
+         <div class="detail-image">
+            <img id="detail-img" src="" alt="">
+         </div>
+         <div class="detail-info">
+            <h2 class="detail-title" id="detail-title"></h2>
+            <div class="detail-description" id="detail-description"></div>
+            <div class="detail-specs">
+               <p class="spec-title">Material Composition:</p>
+               <p id="detail-material"></p>
+               <p class="spec-title">Fabric:</p>
+               <p id="detail-fabric"></p>
+               <p class="spec-title">Craftsmanship:</p>
+               <p id="detail-craftsmanship"></p>
+            </div>
+         </div>
+      </div>
+   </div>
    <!-- About -->
    <section id="about" class="about">
       <div class="container">
