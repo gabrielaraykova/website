@@ -1,88 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>IVANKA RAYKOVA | Contemporary Fashion Design</title>
-      <style>
-         /* Base Styles */
-         :root {
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>IVANKA RAYKOVA | Contemporary Fashion Design</title>
+   <style>
+      /* Base Styles */
+      :root {
          --primary-color: #f8f8f8;
          --secondary-color: #212121;
          --accent-color: #e0e0e0;
          --font-main: 'Arial', sans-serif;
          --font-secondary: 'Times New Roman', serif;
          --transition: all 0.3s ease;
-         }
-         * {
+      }
+
+      * {
          margin: 0;
          padding: 0;
          box-sizing: border-box;
-         }
-         body {
+      }
+
+      body {
          font-family: var(--font-main);
          color: var(--secondary-color);
          background-color: var(--primary-color);
          line-height: 1.6;
          overflow-x: hidden;
-         }
-         a {
+      }
+
+      a {
          text-decoration: none;
          color: inherit;
-         }
-         ul {
+      }
+
+      ul {
          list-style: none;
-         }
-         img {
+      }
+
+      img {
          max-width: 100%;
          height: auto;
          display: block;
-         }
-         button, .btn {
+      }
+
+      button,
+      .btn {
          background: none;
          border: none;
          cursor: pointer;
          font-family: inherit;
          font-size: inherit;
          padding: 0;
-         }
-         .container {
+      }
+
+      .container {
          width: 100%;
          max-width: 1400px;
          margin: 0 auto;
          padding: 0 20px;
-         }
-         /* Typography */
-         h1, h2, h3, h4, h5 {
+      }
+
+      /* Typography */
+      h1,
+      h2,
+      h3,
+      h4,
+      h5 {
          font-weight: normal;
          line-height: 1.2;
-         }
-         h1 {
+      }
+
+      h1 {
          font-size: clamp(2rem, 5vw, 3.5rem);
          letter-spacing: 1px;
-         }
-         h2 {
+      }
+
+      h2 {
          font-size: clamp(1.5rem, 4vw, 2.5rem);
          margin-bottom: 2rem;
          letter-spacing: 0.5px;
-         }
-         h3 {
+      }
+
+      h3 {
          font-size: clamp(1.2rem, 3vw, 1.8rem);
          margin-bottom: 1rem;
-         }
-         p {
+      }
+
+      p {
          margin-bottom: 1.5rem;
          font-size: clamp(0.9rem, 2vw, 1rem);
          letter-spacing: 0.3px;
-         }
-         .uppercase {
+      }
+
+      .uppercase {
          text-transform: uppercase;
-         }
-         .text-center {
+      }
+
+      .text-center {
          text-align: center;
-         }
-         /* Header */
-         header {
+      }
+
+      /* Header */
+      header {
          position: fixed;
          top: 0;
          left: 0;
@@ -90,29 +111,33 @@
          z-index: 1000;
          background-color: rgba(248, 248, 248, 0.95);
          transition: var(--transition);
-         }
-         .header-content {
+      }
+
+      .header-content {
          display: flex;
          justify-content: space-between;
          align-items: center;
          padding: 1.5rem 0;
-         }
-         .logo {
+      }
+
+      .logo {
          font-family: var(--font-secondary);
          font-size: 1.8rem;
          letter-spacing: 2px;
-         }
-         /* IMPORTANT: Hide the mobile toggle button by default (for desktop) */
-         .mobile-nav-toggle {
+      }
+
+      /* IMPORTANT: Hide the mobile toggle button by default (for desktop) */
+      .mobile-nav-toggle {
          display: none;
          background: none;
          border: none;
          font-size: 1.5rem;
          cursor: pointer;
          z-index: 2000;
-         }
-         /* Mobile Navigation */
-         .mobile-nav {
+      }
+
+      /* Mobile Navigation */
+      .mobile-nav {
          position: fixed;
          top: 0;
          right: -100%;
@@ -123,41 +148,49 @@
          transition: var(--transition);
          z-index: 1500;
          overflow-y: auto;
-         }
-         .mobile-nav.active {
+      }
+
+      .mobile-nav.active {
          right: 0;
-         }
-         .mobile-nav li {
+      }
+
+      .mobile-nav li {
          margin-bottom: 1.5rem;
          font-size: 1.2rem;
          text-transform: uppercase;
          letter-spacing: 1px;
-         }
-         .mobile-submenu {
+      }
+
+      .mobile-submenu {
          display: none;
          margin: 1rem 0 0.5rem 1rem;
          padding-left: 1rem;
          border-left: 1px solid var(--accent-color);
-         }
-         .mobile-submenu.active {
+      }
+
+      .mobile-submenu.active {
          display: block;
-         }
-         .mobile-submenu li {
+      }
+
+      .mobile-submenu li {
          margin-bottom: 1rem;
          font-size: 1rem;
-         }
-         .dropdown-mobile > a::after {
+      }
+
+      .dropdown-mobile>a::after {
          content: ' +';
          font-size: 1.2rem;
-         }
-         /* Hero Section */
-         .hero {
+      }
+
+      /* Hero Section */
+      .hero {
          height: 100vh;
          margin-top: 0;
          position: relative;
          overflow: hidden;
-         }
-         .hero-slide {
+      }
+
+      .hero-slide {
          height: 100%;
          width: 100%;
          position: absolute;
@@ -165,14 +198,16 @@
          left: 0;
          opacity: 1;
          transition: opacity 1s ease;
-         }
-         .hero-img {
+      }
+
+      .hero-img {
          width: 100%;
          height: 100%;
          object-fit: cover;
          object-position: center;
-         }
-         .hero-content {
+      }
+
+      .hero-content {
          position: absolute;
          bottom: 10%;
          left: 0;
@@ -180,45 +215,54 @@
          padding: 0 2rem;
          color: white;
          text-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
-         }
-         .hero-title {
+      }
+
+      .hero-title {
          font-family: var(--font-secondary);
          margin-bottom: 1rem;
-         }
-         .hero-subtitle {
+      }
+
+      .hero-subtitle {
          font-size: clamp(1rem, 3vw, 1.3rem);
          max-width: 600px;
-         }
-         /* Collections */
-         .collections {
+      }
+
+      /* Collections */
+      .collections {
          padding: 8rem 0;
-         }
-         .section-title {
+      }
+
+      .section-title {
          text-align: center;
          margin-bottom: 4rem;
          font-family: var(--font-secondary);
-         }
-         .collection-grid {
+      }
+
+      .collection-grid {
          display: grid;
          grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
          gap: 2rem;
-         }
-         .collection-item {
+      }
+
+      .collection-item {
          position: relative;
          overflow: hidden;
          transition: var(--transition);
          cursor: pointer;
-         }
-         .collection-img {
+      }
+
+      .collection-img {
          aspect-ratio: 2/3;
          object-fit: cover;
          transition: transform 0.5s ease;
-         }
-         .collection-item:hover .collection-img {
+      }
+
+      .collection-item:hover .collection-img {
          transform: scale(1.03);
-         }
-         /* Modal */
-         .modal {
+      }
+
+      /* Modal */
+      .modal {
          display: none;
          position: fixed;
          z-index: 2000;
@@ -228,14 +272,16 @@
          height: 100%;
          overflow: auto;
          background-color: rgba(0, 0, 0, 0.9);
-         }
-         .modal-content {
+      }
+
+      .modal-content {
          margin: auto;
          display: block;
          max-width: 90%;
          max-height: 90%;
-         }
-         .close-modal {
+      }
+
+      .close-modal {
          position: absolute;
          top: 15px;
          right: 35px;
@@ -244,101 +290,122 @@
          font-weight: bold;
          transition: 0.3s;
          cursor: pointer;
-         }
-         .close-modal:hover,
-         .close-modal:focus {
+      }
+
+      .close-modal:hover,
+      .close-modal:focus {
          color: #bbb;
          text-decoration: none;
          cursor: pointer;
-         }
-         /* About */
-         .about {
+      }
+
+      /* About */
+      .about {
          padding: 8rem 0;
          background-color: var(--accent-color);
-         }
-         .about-content {
+      }
+
+      .about-content {
          display: flex;
          flex-wrap: wrap;
          align-items: center;
          gap: 4rem;
-         }
-         .about-image {
+      }
+
+      .about-image {
          flex: 1;
          min-width: 300px;
-         }
-         .about-image img {
+      }
+
+      .about-image img {
          width: 100%;
          height: auto;
-         }
-         .about-text {
+      }
+
+      .about-text {
          flex: 1;
          min-width: 300px;
-         }
-         .about-title {
+      }
+
+      .about-title {
          font-family: var(--font-secondary);
          margin-bottom: 2rem;
-         }
-         /* Atelier */
-         .atelier {
+      }
+
+      /* Atelier */
+      .atelier {
          padding: 8rem 0;
-         }
-         .atelier-content {
+      }
+
+      .atelier-content {
          display: flex;
          flex-direction: column;
          align-items: center;
          text-align: center;
          max-width: 800px;
          margin: 0 auto;
-         }
-         /* Contact */
-         .contact {
+      }
+
+      /* Contact */
+      .contact {
          padding: 8rem 0;
          background-color: var(--secondary-color);
          color: var(--primary-color);
-         }
-         .contact-content {
+      }
+
+      .contact-content {
          display: flex;
          flex-wrap: wrap;
          justify-content: space-between;
          gap: 4rem;
-         }
-         .contact-info, .contact-form {
+      }
+
+      .contact-info,
+      .contact-form {
          flex: 1;
          min-width: 300px;
-         }
-         .contact-title {
+      }
+
+      .contact-title {
          font-family: var(--font-secondary);
          margin-bottom: 2rem;
-         }
-         .contact-item {
+      }
+
+      .contact-item {
          margin-bottom: 1.5rem;
-         }
-         .contact-label {
+      }
+
+      .contact-label {
          display: block;
          font-size: 0.9rem;
          margin-bottom: 0.5rem;
          letter-spacing: 1px;
          text-transform: uppercase;
-         }
-         .form-group {
+      }
+
+      .form-group {
          margin-bottom: 1.5rem;
-         }
-         .form-control {
+      }
+
+      .form-control {
          width: 100%;
          padding: 0.8rem;
          background-color: transparent;
          border: 1px solid var(--primary-color);
          color: var(--primary-color);
          font-family: inherit;
-         }
-         .form-control::placeholder {
+      }
+
+      .form-control::placeholder {
          color: rgba(248, 248, 248, 0.6);
-         }
-         textarea.form-control {
+      }
+
+      textarea.form-control {
          resize: vertical;
          min-height: 150px;
-         }
-         .btn-submit {
+      }
+
+      .btn-submit {
          padding: 1rem 2rem;
          background-color: var(--primary-color);
          color: var(--secondary-color);
@@ -347,50 +414,60 @@
          transition: var(--transition);
          border: none;
          cursor: pointer;
-         }
-         .btn-submit:hover {
+      }
+
+      .btn-submit:hover {
          background-color: rgba(248, 248, 248, 0.8);
-         }
-         /* Footer */
-         footer {
+      }
+
+      /* Footer */
+      footer {
          padding: 4rem 0;
          background-color: var(--primary-color);
-         }
-         .footer-content {
+      }
+
+      .footer-content {
          display: flex;
          flex-wrap: wrap;
          justify-content: space-between;
          gap: 2rem;
-         }
-         .footer-logo {
+      }
+
+      .footer-logo {
          font-family: var(--font-secondary);
          font-size: 1.5rem;
          letter-spacing: 2px;
          margin-bottom: 1rem;
-         }
-         .footer-col {
+      }
+
+      .footer-col {
          flex: 1;
          min-width: 200px;
-         }
-         .footer-heading {
+      }
+
+      .footer-heading {
          margin-bottom: 1.5rem;
          font-size: 0.9rem;
          letter-spacing: 1px;
          text-transform: uppercase;
-         }
-         .footer-nav li {
+      }
+
+      .footer-nav li {
          margin-bottom: 0.5rem;
          font-size: 0.9rem;
-         }
-         .footer-nav a:hover {
+      }
+
+      .footer-nav a:hover {
          text-decoration: underline;
-         }
-         .social-links {
+      }
+
+      .social-links {
          display: flex;
          gap: 1rem;
          margin-top: 1rem;
-         }
-         .social-link {
+      }
+
+      .social-link {
          display: inline-block;
          width: 40px;
          height: 40px;
@@ -398,38 +475,45 @@
          text-align: center;
          border: 1px solid var(--secondary-color);
          transition: var(--transition);
-         }
-         .social-link:hover {
+      }
+
+      .social-link:hover {
          background-color: var(--secondary-color);
          color: var(--primary-color);
-         }
-         .copyright {
+      }
+
+      .copyright {
          margin-top: 4rem;
          padding-top: 2rem;
          border-top: 1px solid rgba(33, 33, 33, 0.1);
          text-align: center;
          font-size: 0.8rem;
-         }
-         /* Desktop Navigation */
-         .nav-desktop {
+      }
+
+      /* Desktop Navigation */
+      .nav-desktop {
          display: flex;
          align-items: center;
-         }
-         .nav-desktop li {
+      }
+
+      .nav-desktop li {
          margin-left: 2.5rem;
          font-size: 0.9rem;
          letter-spacing: 1px;
          text-transform: uppercase;
          position: relative;
-         }
-         .nav-desktop a {
+      }
+
+      .nav-desktop a {
          position: relative;
          transition: var(--transition);
-         }
-         .nav-desktop a:hover {
+      }
+
+      .nav-desktop a:hover {
          opacity: 0.7;
-         }
-         .nav-desktop a::after {
+      }
+
+      .nav-desktop a::after {
          content: '';
          position: absolute;
          width: 0;
@@ -438,36 +522,42 @@
          left: 0;
          background-color: var(--secondary-color);
          transition: var(--transition);
-         }
-         .nav-desktop a:hover::after {
+      }
+
+      .nav-desktop a:hover::after {
          width: 100%;
-         }
-         /* Dropdown menu styles */
-         .dropdown {
+      }
+
+      /* Dropdown menu styles */
+      .dropdown {
          position: relative;
          display: inline-block;
-         }
-         .dropdown-toggle::after {
+      }
+
+      .dropdown-toggle::after {
          content: '▼';
          font-size: 0.7rem;
          margin-left: 5px;
          vertical-align: middle;
-         }
-         .dropdown-content {
+      }
+
+      .dropdown-content {
          display: none;
          position: absolute;
          top: 100%;
          left: 0;
          background-color: var(--primary-color);
          min-width: 200px;
-         box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+         box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.1);
          z-index: 1000;
          margin-top: 10px;
-         }
-         .dropdown:hover .dropdown-content {
+      }
+
+      .dropdown:hover .dropdown-content {
          display: block;
-         }
-         .dropdown-content a {
+      }
+
+      .dropdown-content a {
          color: var(--secondary-color);
          padding: 12px 16px;
          text-decoration: none;
@@ -475,377 +565,416 @@
          font-size: 0.85rem;
          text-transform: uppercase;
          letter-spacing: 1px;
-         }
-         .dropdown-content a:hover {
-         background-color: var(--accent-color);
-         }
-         .dropdown-toggle:hover::after {
-         opacity: 0.7;
-         }
-         /* Mobile-only styles */
-         @media screen and (max-width: 768px) {
-         .nav-desktop {
-         display: none;
-         }
-         .mobile-nav-toggle {
-         display: block;
-         }
-         .mobile-nav {
-         position: fixed;
-         top: 0;
-         right: -100%;
-         width: 100%;
-         height: 100vh;
-         background-color: var(--primary-color);
-         padding: 6rem 2rem 2rem;
-         transition: var(--transition);
-         z-index: 1500;
-         overflow-y: auto;
-         }
-         .mobile-nav.active {
-         right: 0;
-         }
-         .mobile-nav li {
-         margin-bottom: 1.5rem;
-         font-size: 1.2rem;
-         text-transform: uppercase;
-         letter-spacing: 1px;
-         }
-         .mobile-submenu {
-         display: none;
-         margin: 1rem 0 0.5rem 1rem;
-         padding-left: 1rem;
-         border-left: 1px solid var(--accent-color);
-         }
-         .mobile-submenu.active {
-         display: block;
-         }
-         .mobile-submenu li {
-         margin-bottom: 1rem;
-         font-size: 1rem;
-         }
-         .dropdown-mobile > a::after {
-         content: ' +';
-         font-size: 1.2rem;
-         }
-         }
-         /* Hide mobile nav on larger screens */
-         @media screen and (min-width: 769px) {
-         .mobile-nav {
-         display: none !important;
-         }
-         .mobile-nav-toggle {
-         display: none !important;
-         }
-         }
-      </style>
-   </head>
-   <body>
-      <!-- Header -->
-      <header>
-         <div class="container">
-            <div class="header-content">
-               <a href="#" class="logo">IVANKA RAYKOVA</a>
-               <!-- Desktop Navigation -->
-               <nav>
-                  <ul class="nav-desktop">
-                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle">Collections</a>
-                        <div class="dropdown-content">
-                           <a href="collections/bulgarian-broderie.html">Bulgarian broderie</a>
-                           <a href="collections/summer-2025.html">Summer 2025</a>
-                           <a href="collections/winter-2024.html">Winter 2024</a>
-                           <a href="collections/archive.html">Archive</a>
-                        </div>
-                     </li>
-                     <li><a href="#about">About</a></li>
-                     <li><a href="#atelier">Atelier</a></li>
-                     <li><a href="#contact">Contact</a></li>
-                  </ul>
-               </nav>
-               <!-- Mobile toggle navigation -->
-               <button class="mobile-nav-toggle">≡</button>
-               <div class="mobile-nav">
-                  <ul>
-                     <li class="dropdown-mobile">
-                        <a href="#">Collections</a>
-                        <ul class="mobile-submenu">
-                           <li><a href="collections/bulgarian-broderie.html">Bulgarian broderie</a></li>
-                           <li><a href="collections/summer-2025.html">Summer 2025</a></li>
-                           <li><a href="collections/winter-2024.html">Winter 2024</a></li>
-                           <li><a href="collections/archive.html">Archive</a></li>
-                        </ul>
-                     </li>
-                     <li><a href="#about">About</a></li>
-                     <li><a href="#atelier">Atelier</a></li>
-                     <li><a href="#contact">Contact</a></li>
-                  </ul>
-               </div>
-            </div>
-         </div>
-      </header>
-      <!-- Hero Section -->
-      <section class="hero">
-         <div class="hero-slide active">
-            <img src="images/1.jpg" alt="Fashion Collection" class="hero-img">
-            <div class="container">
-               <div class="hero-content">
-                  <h1 class="hero-title">IVANKA RAYKOVA</h1>
-                  <p class="hero-subtitle">Contemporary Fashion with Traditional Embroidery</p>
-               </div>
-            </div>
-         </div>
-      </section>
-      <!-- Collections -->
-      <section id="collections" class="collections">
-         <div class="container">
-            <h2 class="section-title">Bulgarian broderie</h2>
-            <div class="collection-grid">
-               <!-- Image 1 -->
-               <div class="collection-item">
-                  <img src="images/1.jpg" alt="IVANKA RAYKOVA Collection - White embroidered dress" class="collection-img" onclick="openModal(this)">
-               </div>
-               <!-- Image 2 -->
-               <div class="collection-item">
-                  <img src="images/2.jpg" alt="IVANKA RAYKOVA Collection - White embroidered set" class="collection-img" onclick="openModal(this)">
-               </div>
-               <!-- Image 3 -->
-               <div class="collection-item">
-                  <img src="images/3.jpg" alt="IVANKA RAYKOVA Collection - White embroidered outfit" class="collection-img" onclick="openModal(this)">
-               </div>
-               <!-- Image 4 -->
-               <div class="collection-item">
-                  <img src="images/4.jpg" alt="IVANKA RAYKOVA Collection - White tailored outfit" class="collection-img" onclick="openModal(this)">
-               </div>
-               <!-- Image 5 -->
-               <div class="collection-item">
-                  <img src="images/5.jpg" alt="IVANKA RAYKOVA Collection - White embroidered tunic" class="collection-img" onclick="openModal(this)">
-               </div>
-               <!-- Image 6 -->
-               <div class="collection-item">
-                  <img src="images/6.jpg" alt="IVANKA RAYKOVA Collection - Beige embroidered outfit" class="collection-img" onclick="openModal(this)">
-               </div>
-               <!-- Image 7 -->
-               <div class="collection-item">
-                  <img src="images/7.jpg" alt="IVANKA RAYKOVA Collection - Beige embroidered dress" class="collection-img" onclick="openModal(this)">
-               </div>
-               <!-- Image 8 -->
-               <div class="collection-item">
-                  <img src="images/8.jpg" alt="IVANKA RAYKOVA Collection - Men's white suit" class="collection-img" onclick="openModal(this)">
-               </div>
-               <!-- Image 9 -->
-               <div class="collection-item">
-                  <img src="images/9.jpg" alt="IVANKA RAYKOVA Collection - Men's beige suit" class="collection-img" onclick="openModal(this)">
-               </div>
-            </div>
-            <!-- Modal for image zoom -->
-            <div id="imageModal" class="modal">
-               <span class="close-modal" onclick="closeModal()">&times;</span>
-               <img class="modal-content" id="modalImg">
-            </div>
-         </div>
-      </section>
-      <!-- About -->
-      <section id="about" class="about">
-         <div class="container">
-            <div class="about-content">
-               <div class="about-image">
-                  <img src="images/10.jpg" alt="Ivanka Raykova - Designer">
-               </div>
-               <div class="about-text">
-                  <h2 class="about-title">About the Designer</h2>
-                  <p>With a background in fine arts and textile design, Ivanka Raykova brings a unique perspective to contemporary fashion that honors traditional craftsmanship. Inspired by natural landscapes and cultural heritage, each piece is thoughtfully crafted to blend modern silhouettes with traditional embroidery techniques.</p>
-                  <p>The IVANKA RAYKOVA label celebrates the beauty of traditional embroidery and craftsmanship while creating elegant, minimalist designs in a predominantly white and neutral color palette that allows the intricate detailing to take center stage.</p>
-                  <p>Each collection reflects a commitment to preserving cultural heritage, supporting local artisans, and creating timeless pieces that connect the past with the present—designs that tell a story while embracing modern aesthetics.</p>
-               </div>
-            </div>
-         </div>
-      </section>
-      <!-- Atelier -->
-      <section id="atelier" class="atelier">
-         <div class="container">
-            <h2 class="section-title">The Atelier</h2>
-            <div class="atelier-content">
-               <p>Located in a bright, airy space that reflects our aesthetic, our atelier serves as both design studio and showroom. Here, traditional embroidery techniques meet contemporary design, with each piece carefully crafted to honor cultural heritage.</p>
-               <p>We work closely with master embroiderers and artisans who specialize in traditional techniques, preserving these crafts while reimagining them for modern sensibilities. Every embroidery pattern tells a story and carries symbolic meaning from our cultural traditions.</p>
-               <p>Our commitment to craftsmanship extends to every aspect of production, from sourcing natural, sustainable fabrics to the final hand-finished details. We welcome clients by appointment for custom consultations and fittings, offering a personalized experience that connects them to the stories behind our designs.</p>
-            </div>
-         </div>
-      </section>
-      <!-- Contact -->
-      <section id="contact" class="contact">
-         <div class="container">
-            <h2 class="section-title">Contact</h2>
-            <div class="contact-content">
-               <div class="contact-info">
-                  <h3 class="contact-title">Get in Touch</h3>
-                  <div class="contact-item">
-                     <span class="contact-label">Studio Address</span>
-                     <p>123 Atelier Street<br>Fashion District<br>New York, NY 10001</p>
-                  </div>
-                  <div class="contact-item">
-                     <span class="contact-label">Email</span>
-                     <p>studio@ivankaraykova.com</p>
-                  </div>
-                  <div class="contact-item">
-                     <span class="contact-label">Phone</span>
-                     <p>+1 (212) 555-0123</p>
-                  </div>
-                  <div class="contact-item">
-                     <span class="contact-label">Hours</span>
-                     <p>Monday–Friday: 10am–6pm<br>Saturday: By appointment only<br>Sunday: Closed</p>
-                  </div>
-               </div>
-               <div class="contact-form">
-                  <h3 class="contact-title">Send a Message</h3>
-                  <form>
-                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Name" required>
-                     </div>
-                     <div class="form-group">
-                        <input type="email" class="form-control" placeholder="Email" required>
-                     </div>
-                     <div class="form-group">
-                        <select class="form-control" required>
-                           <option value="" disabled selected>Inquiry Type</option>
-                           <option value="appointment">Appointment Request</option>
-                           <option value="custom">Custom Design</option>
-                           <option value="collaboration">Collaboration</option>
-                           <option value="press">Press Inquiry</option>
-                           <option value="other">Other</option>
-                        </select>
-                     </div>
-                     <div class="form-group">
-                        <textarea class="form-control" placeholder="Message" required></textarea>
-                     </div>
-                     <button type="submit" class="btn-submit">Send Message</button>
-                  </form>
-               </div>
-            </div>
-         </div>
-      </section>
-      <!-- Footer -->
-      <footer>
-         <div class="container">
-            <div class="footer-content">
-               <div class="footer-col">
-                  <div class="footer-logo">IVANKA RAYKOVA</div>
-                  <p>Contemporary fashion design celebrating cultural heritage through traditional embroidery and modern silhouettes.</p>
-                  <div class="social-links">
-                     <a href="#" class="social-link">IG</a>
-                     <a href="#" class="social-link">FB</a>
-                     <a href="#" class="social-link">TW</a>
-                     <a href="#" class="social-link">PT</a>
-                  </div>
-               </div>
-               <div class="footer-col">
-                  <h4 class="footer-heading">Navigation</h4>
-                  <ul class="footer-nav">
-                     <li><a href="#collections">Collections</a></li>
-                     <li><a href="#about">About</a></li>
-                     <li><a href="#atelier">Atelier</a></li>
-                     <li><a href="#contact">Contact</a></li>
-                  </ul>
-               </div>
-               <div class="footer-col">
-                  <h4 class="footer-heading">Collections</h4>
-                  <ul class="footer-nav">
-                     <li><a href="collections/bulgarian-broderie.html">Bulgarian broderie</a></li>
-                     <li><a href="collections/summer-2025.html">Summer 2025</a></li>
-                     <li><a href="collections/winter-2024.html">Winter 2024</a></li>
-                     <li><a href="collections/archive.html">Archive</a></li>
-                  </ul>
-               </div>
-               <div class="footer-col">
-                  <h4 class="footer-heading">Information</h4>
-                  <ul class="footer-nav">
-                     <li><a href="#">Sustainability</a></li>
-                     <li><a href="#">Shipping & Returns</a></li>
-                     <li><a href="#">Privacy Policy</a></li>
-                     <li><a href="#">Terms & Conditions</a></li>
-                  </ul>
-               </div>
-            </div>
-            <div class="copyright">
-               <p>&copy; 2025 IVANKA RAYKOVA. All Rights Reserved.</p>
-            </div>
-         </div>
-      </footer>
-      <script>
-         // Mobile Navigation
-         const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
-         const mobileNav = document.querySelector('.mobile-nav');
-         
-         mobileNavToggle.addEventListener('click', () => {
-             mobileNav.classList.toggle('active');
-             mobileNavToggle.textContent = mobileNav.classList.contains('active') ? '×' : '≡';
-         });
-         
-         // Handle mobile dropdown menu - with fix to prevent entire menu from closing
-         const mobileDropdownToggle = document.querySelector('.dropdown-mobile > a');
-         const mobileSubmenu = document.querySelector('.mobile-submenu');
-         
-         if (mobileDropdownToggle && mobileSubmenu) {
-             mobileDropdownToggle.addEventListener('click', (e) => {
-                 e.preventDefault();
-                 e.stopPropagation(); // Prevent event from bubbling up
-                 mobileSubmenu.classList.toggle('active');
-                 mobileDropdownToggle.textContent = mobileSubmenu.classList.contains('active') 
-                     ? 'Collections -' 
-                     : 'Collections +';
-             });
-         }
-         
-         // Close mobile nav when clicking a link (except dropdown)
-         const mobileNavLinks = document.querySelectorAll('.mobile-nav a:not(.dropdown-mobile > a)');
-         mobileNavLinks.forEach(link => {
-             link.addEventListener('click', () => {
-                 mobileNav.classList.remove('active');
-                 mobileNavToggle.textContent = '≡';
-             });
-         });
-         
-         // Header scroll effect
-         const header = document.querySelector('header');
-         window.addEventListener('scroll', () => {
-             if (window.scrollY > 50) {
-                 header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
-             } else {
-                 header.style.boxShadow = 'none';
-             }
-         });
+      }
 
-         // Image Modal
-         function openModal(img) {
-             const modal = document.getElementById('imageModal');
-             const modalImg = document.getElementById('modalImg');
-             modal.style.display = 'flex';
-             modalImg.src = img.src;
-             document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+      .dropdown-content a:hover {
+         background-color: var(--accent-color);
+      }
+
+      .dropdown-toggle:hover::after {
+         opacity: 0.7;
+      }
+
+      /* Mobile-only styles */
+      @media screen and (max-width: 768px) {
+         .nav-desktop {
+            display: none;
          }
-         
-         function closeModal() {
-             document.getElementById('imageModal').style.display = 'none';
-             document.body.style.overflow = 'auto'; // Restore scrolling
+
+         .mobile-nav-toggle {
+            display: block;
          }
-         
-         // Close modal when clicking outside the image
-         window.onclick = function(event) {
-             const modal = document.getElementById('imageModal');
-             if (event.target === modal) {
-                 closeModal();
-             }
+
+         .mobile-nav {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 100%;
+            height: 100vh;
+            background-color: var(--primary-color);
+            padding: 6rem 2rem 2rem;
+            transition: var(--transition);
+            z-index: 1500;
+            overflow-y: auto;
          }
-         
-         // Form submission (prevent default)
-         const form = document.querySelector('form');
-         if (form) {
-             form.addEventListener('submit', (e) => {
-                 e.preventDefault();
-                 alert('Thank you for your message. We will be in touch soon.');
-                 form.reset();
-             });
+
+         .mobile-nav.active {
+            right: 0;
          }
-      </script>
-   </body>
+
+         .mobile-nav li {
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+         }
+
+         .mobile-submenu {
+            display: none;
+            margin: 1rem 0 0.5rem 1rem;
+            padding-left: 1rem;
+            border-left: 1px solid var(--accent-color);
+         }
+
+         .mobile-submenu.active {
+            display: block;
+         }
+
+         .mobile-submenu li {
+            margin-bottom: 1rem;
+            font-size: 1rem;
+         }
+
+         .dropdown-mobile>a::after {
+            content: ' +';
+            font-size: 1.2rem;
+         }
+      }
+
+      /* Hide mobile nav on larger screens */
+      @media screen and (min-width: 769px) {
+         .mobile-nav {
+            display: none !important;
+         }
+
+         .mobile-nav-toggle {
+            display: none !important;
+         }
+      }
+   </style>
+</head>
+
+<body>
+   <!-- Header -->
+   <header>
+      <div class="container">
+         <div class="header-content">
+            <a href="#" class="logo">IVANKA RAYKOVA</a>
+            <!-- Desktop Navigation -->
+            <nav>
+               <ul class="nav-desktop">
+                  <li class="dropdown">
+                     <a href="#" class="dropdown-toggle">Collections</a>
+                     <div class="dropdown-content">
+                        <a href="collections/bulgarian-broderie/">Bulgarian broderie</a>
+                        <a href="collections/summer-2025.html">Summer 2025</a>
+                        <a href="collections/winter-2024.html">Winter 2024</a>
+                        <a href="collections/archive.html">Archive</a>
+                     </div>
+                  </li>
+                  <li><a href="#about">About</a></li>
+                  <li><a href="#atelier">Atelier</a></li>
+                  <li><a href="#contact">Contact</a></li>
+               </ul>
+            </nav>
+            <!-- Mobile toggle navigation -->
+            <button class="mobile-nav-toggle">≡</button>
+            <div class="mobile-nav">
+               <ul>
+                  <li class="dropdown-mobile">
+                     <a href="#">Collections</a>
+                     <ul class="mobile-submenu">
+                        <li><a href="collections/bulgarian-broderie/">Bulgarian broderie</a></li>
+                        <li><a href="collections/summer-2025.html">Summer 2025</a></li>
+                        <li><a href="collections/winter-2024.html">Winter 2024</a></li>
+                        <li><a href="collections/archive.html">Archive</a></li>
+                     </ul>
+                  </li>
+                  <li><a href="#about">About</a></li>
+                  <li><a href="#atelier">Atelier</a></li>
+                  <li><a href="#contact">Contact</a></li>
+               </ul>
+            </div>
+         </div>
+      </div>
+   </header>
+   <!-- Hero Section -->
+   <section class="hero">
+      <div class="hero-slide active">
+         <img src="images/1.jpg" alt="Fashion Collection" class="hero-img">
+         <div class="container">
+            <div class="hero-content">
+               <h1 class="hero-title">IVANKA RAYKOVA</h1>
+               <p class="hero-subtitle">Contemporary Fashion with Traditional Embroidery</p>
+            </div>
+         </div>
+      </div>
+   </section>
+   <!-- Collections -->
+   <section id="collections" class="collections">
+      <div class="container">
+         <h2 class="section-title">Bulgarian broderie</h2>
+         <div class="collection-grid">
+            <!-- Image 1 -->
+            <div class="collection-item">
+               <img src="images/1.jpg" alt="IVANKA RAYKOVA Collection - White embroidered dress" class="collection-img"
+                  onclick="openModal(this)">
+            </div>
+            <!-- Image 2 -->
+            <div class="collection-item">
+               <img src="images/2.jpg" alt="IVANKA RAYKOVA Collection - White embroidered set" class="collection-img"
+                  onclick="openModal(this)">
+            </div>
+            <!-- Image 3 -->
+            <div class="collection-item">
+               <img src="images/3.jpg" alt="IVANKA RAYKOVA Collection - White embroidered outfit" class="collection-img"
+                  onclick="openModal(this)">
+            </div>
+            <!-- Image 4 -->
+            <div class="collection-item">
+               <img src="images/4.jpg" alt="IVANKA RAYKOVA Collection - White tailored outfit" class="collection-img"
+                  onclick="openModal(this)">
+            </div>
+            <!-- Image 5 -->
+            <div class="collection-item">
+               <img src="images/5.jpg" alt="IVANKA RAYKOVA Collection - White embroidered tunic" class="collection-img"
+                  onclick="openModal(this)">
+            </div>
+            <!-- Image 6 -->
+            <div class="collection-item">
+               <img src="images/6.jpg" alt="IVANKA RAYKOVA Collection - Beige embroidered outfit" class="collection-img"
+                  onclick="openModal(this)">
+            </div>
+            <!-- Image 7 -->
+            <div class="collection-item">
+               <img src="images/7.jpg" alt="IVANKA RAYKOVA Collection - Beige embroidered dress" class="collection-img"
+                  onclick="openModal(this)">
+            </div>
+            <!-- Image 8 -->
+            <div class="collection-item">
+               <img src="images/8.jpg" alt="IVANKA RAYKOVA Collection - Men's white suit" class="collection-img"
+                  onclick="openModal(this)">
+            </div>
+            <!-- Image 9 -->
+            <div class="collection-item">
+               <img src="images/9.jpg" alt="IVANKA RAYKOVA Collection - Men's beige suit" class="collection-img"
+                  onclick="openModal(this)">
+            </div>
+         </div>
+         <!-- Modal for image zoom -->
+         <div id="imageModal" class="modal">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <img class="modal-content" id="modalImg">
+         </div>
+      </div>
+   </section>
+   <!-- About -->
+   <section id="about" class="about">
+      <div class="container">
+         <div class="about-content">
+            <div class="about-image">
+               <img src="images/10.jpg" alt="Ivanka Raykova - Designer">
+            </div>
+            <div class="about-text">
+               <h2 class="about-title">About the Designer</h2>
+               <p>With a background in fine arts and textile design, Ivanka Raykova brings a unique perspective to
+                  contemporary fashion that honors traditional craftsmanship. Inspired by natural landscapes and
+                  cultural heritage, each piece is thoughtfully crafted to blend modern silhouettes with traditional
+                  embroidery techniques.</p>
+               <p>The IVANKA RAYKOVA label celebrates the beauty of traditional embroidery and craftsmanship while
+                  creating elegant, minimalist designs in a predominantly white and neutral color palette that allows
+                  the intricate detailing to take center stage.</p>
+               <p>Each collection reflects a commitment to preserving cultural heritage, supporting local artisans, and
+                  creating timeless pieces that connect the past with the present—designs that tell a story while
+                  embracing modern aesthetics.</p>
+            </div>
+         </div>
+      </div>
+   </section>
+   <!-- Atelier -->
+   <section id="atelier" class="atelier">
+      <div class="container">
+         <h2 class="section-title">The Atelier</h2>
+         <div class="atelier-content">
+            <p>Located in a bright, airy space that reflects our aesthetic, our atelier serves as both design studio and
+               showroom. Here, traditional embroidery techniques meet contemporary design, with each piece carefully
+               crafted to honor cultural heritage.</p>
+            <p>We work closely with master embroiderers and artisans who specialize in traditional techniques,
+               preserving these crafts while reimagining them for modern sensibilities. Every embroidery pattern tells a
+               story and carries symbolic meaning from our cultural traditions.</p>
+            <p>Our commitment to craftsmanship extends to every aspect of production, from sourcing natural, sustainable
+               fabrics to the final hand-finished details. We welcome clients by appointment for custom consultations
+               and fittings, offering a personalized experience that connects them to the stories behind our designs.
+            </p>
+         </div>
+      </div>
+   </section>
+   <!-- Contact -->
+   <section id="contact" class="contact">
+      <div class="container">
+         <h2 class="section-title">Contact</h2>
+         <div class="contact-content">
+            <div class="contact-info">
+               <h3 class="contact-title">Get in Touch</h3>
+               <div class="contact-item">
+                  <span class="contact-label">Studio Address</span>
+                  <p>123 Atelier Street<br>Fashion District<br>New York, NY 10001</p>
+               </div>
+               <div class="contact-item">
+                  <span class="contact-label">Email</span>
+                  <p>studio@ivankaraykova.com</p>
+               </div>
+               <div class="contact-item">
+                  <span class="contact-label">Phone</span>
+                  <p>+1 (212) 555-0123</p>
+               </div>
+               <div class="contact-item">
+                  <span class="contact-label">Hours</span>
+                  <p>Monday–Friday: 10am–6pm<br>Saturday: By appointment only<br>Sunday: Closed</p>
+               </div>
+            </div>
+            <div class="contact-form">
+               <h3 class="contact-title">Send a Message</h3>
+               <form>
+                  <div class="form-group">
+                     <input type="text" class="form-control" placeholder="Name" required>
+                  </div>
+                  <div class="form-group">
+                     <input type="email" class="form-control" placeholder="Email" required>
+                  </div>
+                  <div class="form-group">
+                     <select class="form-control" required>
+                        <option value="" disabled selected>Inquiry Type</option>
+                        <option value="appointment">Appointment Request</option>
+                        <option value="custom">Custom Design</option>
+                        <option value="collaboration">Collaboration</option>
+                        <option value="press">Press Inquiry</option>
+                        <option value="other">Other</option>
+                     </select>
+                  </div>
+                  <div class="form-group">
+                     <textarea class="form-control" placeholder="Message" required></textarea>
+                  </div>
+                  <button type="submit" class="btn-submit">Send Message</button>
+               </form>
+            </div>
+         </div>
+      </div>
+   </section>
+   <!-- Footer -->
+   <footer>
+      <div class="container">
+         <div class="footer-content">
+            <div class="footer-col">
+               <div class="footer-logo">IVANKA RAYKOVA</div>
+               <p>Contemporary fashion design celebrating cultural heritage through traditional embroidery and modern
+                  silhouettes.</p>
+               <div class="social-links">
+                  <a href="#" class="social-link">IG</a>
+                  <a href="#" class="social-link">FB</a>
+                  <a href="#" class="social-link">TW</a>
+                  <a href="#" class="social-link">PT</a>
+               </div>
+            </div>
+            <div class="footer-col">
+               <h4 class="footer-heading">Navigation</h4>
+               <ul class="footer-nav">
+                  <li><a href="#collections">Collections</a></li>
+                  <li><a href="#about">About</a></li>
+                  <li><a href="#atelier">Atelier</a></li>
+                  <li><a href="#contact">Contact</a></li>
+               </ul>
+            </div>
+            <div class="footer-col">
+               <h4 class="footer-heading">Collections</h4>
+               <ul class="footer-nav">
+                  <li><a href="collections/bulgarian-broderie/">Bulgarian broderie</a></li>
+                  <li><a href="collections/summer-2025.html">Summer 2025</a></li>
+                  <li><a href="collections/winter-2024.html">Winter 2024</a></li>
+                  <li><a href="collections/archive.html">Archive</a></li>
+               </ul>
+            </div>
+            <div class="footer-col">
+               <h4 class="footer-heading">Information</h4>
+               <ul class="footer-nav">
+                  <li><a href="#">Sustainability</a></li>
+                  <li><a href="#">Shipping & Returns</a></li>
+                  <li><a href="#">Privacy Policy</a></li>
+                  <li><a href="#">Terms & Conditions</a></li>
+               </ul>
+            </div>
+         </div>
+         <div class="copyright">
+            <p>&copy; 2025 IVANKA RAYKOVA. All Rights Reserved.</p>
+         </div>
+      </div>
+   </footer>
+   <script>
+      // Mobile Navigation
+      const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+      const mobileNav = document.querySelector('.mobile-nav');
+
+      mobileNavToggle.addEventListener('click', () => {
+         mobileNav.classList.toggle('active');
+         mobileNavToggle.textContent = mobileNav.classList.contains('active') ? '×' : '≡';
+      });
+
+      // Handle mobile dropdown menu - with fix to prevent entire menu from closing
+      const mobileDropdownToggle = document.querySelector('.dropdown-mobile > a');
+      const mobileSubmenu = document.querySelector('.mobile-submenu');
+
+      if (mobileDropdownToggle && mobileSubmenu) {
+         mobileDropdownToggle.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation(); // Prevent event from bubbling up
+            mobileSubmenu.classList.toggle('active');
+            mobileDropdownToggle.textContent = mobileSubmenu.classList.contains('active')
+               ? 'Collections -'
+               : 'Collections +';
+         });
+      }
+
+      // Close mobile nav when clicking a link (except dropdown)
+      const mobileNavLinks = document.querySelectorAll('.mobile-nav a:not(.dropdown-mobile > a)');
+      mobileNavLinks.forEach(link => {
+         link.addEventListener('click', () => {
+            mobileNav.classList.remove('active');
+            mobileNavToggle.textContent = '≡';
+         });
+      });
+
+      // Header scroll effect
+      const header = document.querySelector('header');
+      window.addEventListener('scroll', () => {
+         if (window.scrollY > 50) {
+            header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+         } else {
+            header.style.boxShadow = 'none';
+         }
+      });
+
+      // Image Modal
+      function openModal(img) {
+         const modal = document.getElementById('imageModal');
+         const modalImg = document.getElementById('modalImg');
+         modal.style.display = 'flex';
+         modalImg.src = img.src;
+         document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+      }
+
+      function closeModal() {
+         document.getElementById('imageModal').style.display = 'none';
+         document.body.style.overflow = 'auto'; // Restore scrolling
+      }
+
+      // Close modal when clicking outside the image
+      window.onclick = function (event) {
+         const modal = document.getElementById('imageModal');
+         if (event.target === modal) {
+            closeModal();
+         }
+      }
+
+      // Form submission (prevent default)
+      const form = document.querySelector('form');
+      if (form) {
+         form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for your message. We will be in touch soon.');
+            form.reset();
+         });
+      }
+   </script>
+</body>
+
 </html>
