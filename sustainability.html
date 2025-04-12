@@ -1,28 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy | IVANKA RAYKOVA</title>
+    <title>Sustainability | IVANKA RAYKOVA</title>
     <link rel="stylesheet" href="styles/main.css">
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
-
 <body class="policy-page">
-    <div id="privacy-content"></div>
+    <div id="sustainability-content"></div>
 
     <script>
-        fetch('privacy_policy.md')
+        fetch('sustainability.md')
             .then(response => response.text())
             .then(markdown => {
-                document.getElementById('privacy-content').innerHTML = marked.parse(markdown);
+                document.getElementById('sustainability-content').innerHTML = marked.parse(markdown);
             })
             .catch(error => {
-                console.error('Error loading privacy policy:', error);
-                document.getElementById('privacy-content').innerHTML = '<p>Error loading privacy policy. Please try again later.</p>';
+                console.error('Error loading sustainability content:', error);
+                document.getElementById('sustainability-content').innerHTML = '<p>Error loading sustainability content. Please try again later.</p>';
             });
     </script>
 </body>
-
 </html>

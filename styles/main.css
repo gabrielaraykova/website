@@ -1,0 +1,84 @@
+/* Base Variables */
+:root {
+    --primary-color: #f8f8f8;
+    --secondary-color: #212121;
+    --accent-color: #e0e0e0;
+    --font-main: 'Arial', sans-serif;
+    --font-secondary: 'Times New Roman', serif;
+    --transition: all 0.3s ease;
+}
+
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    color: var(--secondary-color);
+    background-color: var(--primary-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* ... (all your existing base styles from index.html) ... */
+
+/* Policy Pages Styles */
+.policy-page {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.policy-page h1,
+.policy-page h2,
+.policy-page h3,
+.policy-page h4 {
+    font-family: var(--font-secondary);
+    margin: 2rem 0 1rem;
+}
+
+.policy-page h1 {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.policy-page h2 {
+    border-bottom: 1px solid var(--accent-color);
+    padding-bottom: 0.5rem;
+}
+
+.policy-page p {
+    margin-bottom: 1rem;
+}
+
+.policy-page ul,
+.policy-page ol {
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+}
+
+.policy-page .last-updated {
+    text-align: right;
+    font-style: italic;
+    margin-top: 3rem;
+}
+
+/* ... (all other existing styles) ... */
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    /* ... (your existing mobile styles) ... */
+}
+
+@media screen and (min-width: 769px) {
+    /* ... (your existing desktop styles) ... */
+}
+
+@media print {
+    .policy-page {
+        padding: 1rem;
+    }
+}
