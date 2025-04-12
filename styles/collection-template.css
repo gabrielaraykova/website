@@ -645,7 +645,7 @@ textarea.form-control {
     background-color: rgba(248, 248, 248, 0.8);
 }
 
-/* Footer */
+/* Footer Styles */
 footer {
     padding: 4rem 0;
     background-color: var(--primary-color);
@@ -658,16 +658,16 @@ footer {
     gap: 2rem;
 }
 
+.footer-col {
+    flex: 1;
+    min-width: 200px;
+}
+
 .footer-logo {
     font-family: var(--font-secondary);
     font-size: 1.5rem;
     letter-spacing: 2px;
     margin-bottom: 1rem;
-}
-
-.footer-col {
-    flex: 1;
-    min-width: 200px;
 }
 
 .footer-heading {
