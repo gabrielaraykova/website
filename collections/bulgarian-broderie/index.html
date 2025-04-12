@@ -4,16 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
-    <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self'; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com;">
     <title>Bulgarian Broderie | IVANKA RAYKOVA</title>
     <link rel="stylesheet" href="../../styles/collection-template.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500&display=swap"
-        rel="stylesheet">
 </head>
 
 <body>
@@ -38,16 +30,16 @@
                         <li><a href="../../index.html#contact">Contact</a></li>
                     </ul>
                 </nav>
-                <!-- Mobile toggle navigation -->
+                <!-- Mobile Navigation Toggle -->
                 <button class="mobile-nav-toggle">≡</button>
                 <div class="mobile-nav">
                     <ul>
                         <li class="dropdown-mobile">
                             <a href="#">Collections</a>
                             <ul class="mobile-submenu">
-                                <li><a href="../bulgarian-broderie/">Bulgarian broderie</a></li>
-                                <li><a href="">Summer 2025</a></li>
-                                <li><a href="">Winter 2024</a></li>
+                                <a href="../bulgarian-broderie/">Bulgarian broderie</a>
+                                <a href="">Summer 2025</a>
+                                <a href="">Winter 2024</a>
                             </ul>
                         </li>
                         <li><a href="../../index.html#about">About</a></li>
@@ -59,86 +51,42 @@
         </div>
     </header>
 
-    <!-- Collection Page Content -->
-    <section class="collection-page">
+    <!-- Collection Content -->
+    <main>
         <div class="container">
-            <h1 class="section-title" id="collection-title">Loading Collection...</h1>
-            <p class="collection-description" id="collection-description">Please wait while the collection loads...</p>
-
-            <div class="collection-grid" id="collection-grid">
-                <!-- Collection items will be loaded dynamically -->
-                <div class="loading">
-                    <div class="loading-spinner"></div>
-                    <p>Loading collection items...</p>
-                </div>
-            </div>
+            <h1 id="collection-title" class="section-title">Bulgarian Broderie</h1>
+            <p id="collection-description" class="collection-description"></p>
+            <div id="collection-grid" class="collection-grid"></div>
         </div>
-    </section>
+    </main>
 
-    <!-- Product Detail View -->
-    <div class="product-detail" id="product-detail">
-        <span class="close-detail" onclick="closeDetail()">&times;</span>
+    <!-- Product Detail Modal -->
+    <div id="product-detail" class="product-detail">
+        <button id="closeDetailBtn" class="close-detail">&times;</button>
         <div class="detail-container">
             <div class="detail-image">
                 <img id="detail-img" src="" alt="">
             </div>
             <div class="detail-info">
-                <h2 class="detail-title" id="detail-title"></h2>
-                <div class="detail-description" id="detail-description"></div>
+                <h2 id="detail-title" class="detail-title"></h2>
+                <p id="detail-description"></p>
                 <div class="detail-specs">
-                    <p class="spec-title">Material Composition:</p>
-                    <p id="detail-material"></p>
-                    <p class="spec-title">Fabric:</p>
-                    <p id="detail-fabric"></p>
-                    <p class="spec-title">Craftsmanship:</p>
-                    <p id="detail-craftsmanship"></p>
+                    <div class="spec-item">
+                        <h3>Material</h3>
+                        <p id="detail-material"></p>
+                    </div>
+                    <div class="spec-item">
+                        <h3>Fabric</h3>
+                        <p id="detail-fabric"></p>
+                    </div>
+                    <div class="spec-item">
+                        <h3>Craftsmanship</h3>
+                        <p id="detail-craftsmanship"></p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">Contact</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h3 class="contact-title">Get in Touch</h3>
-                    <div class="contact-item">
-                        <span class="contact-label">Studio Address</span>
-                        <p>123 Atelier Street<br>Fashion District<br>New York, NY 10001</p>
-                    </div>
-                    <div class="contact-item">
-                        <span class="contact-label">Email</span>
-                        <p>studio@ivankaraykova.com</p>
-                    </div>
-                    <div class="contact-item">
-                        <span class="contact-label">Phone</span>
-                        <p>+1 (212) 555-0123</p>
-                    </div>
-                    <div class="contact-item">
-                        <span class="contact-label">Hours</span>
-                        <p>Monday–Friday: 10am–6pm<br>Saturday: By appointment only<br>Sunday: Closed</p>
-                    </div>
-                </div>
-                <div class="contact-form">
-                    <h3 class="contact-title">Send a Message</h3>
-                    <form>
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" class="form-control" placeholder="Email" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea class="form-control" placeholder="Message" required></textarea>
-                        </div>
-                        <button type="submit" class="btn-submit">Send Message</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Footer -->
     <footer>
@@ -158,7 +106,7 @@
                 <div class="footer-col">
                     <h4 class="footer-heading">Navigation</h4>
                     <ul class="footer-nav">
-                        <li><a href="../../index.html#collections">Collections</a></li>
+                        <li><a href="../../index.html">Home</a></li>
                         <li><a href="../../index.html#about">About</a></li>
                         <li><a href="../../index.html#atelier">Atelier</a></li>
                         <li><a href="../../index.html#contact">Contact</a></li>
@@ -188,53 +136,8 @@
         </div>
     </footer>
 
+    <!-- Scripts -->
     <script src="../../scripts/collection-template.js"></script>
-    <script>
-        // Mobile Navigation Toggle
-        const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
-        const mobileNav = document.querySelector('.mobile-nav');
-
-        mobileNavToggle.addEventListener('click', () => {
-            mobileNav.classList.toggle('active');
-            mobileNavToggle.textContent = mobileNav.classList.contains('active') ? '×' : '≡';
-        });
-
-        // Mobile Dropdown Toggle
-        const dropdownMobile = document.querySelector('.dropdown-mobile');
-        dropdownMobile.addEventListener('click', (e) => {
-            e.preventDefault();
-            dropdownMobile.classList.toggle('active');
-        });
-
-        // Close mobile nav when clicking a link (except dropdown)
-        const mobileNavLinks = document.querySelectorAll('.mobile-nav a:not(.dropdown-mobile > a)');
-        mobileNavLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileNav.classList.remove('active');
-                mobileNavToggle.textContent = '≡';
-            });
-        });
-
-        // Header scroll effect
-        const header = document.querySelector('header');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
-            } else {
-                header.style.boxShadow = 'none';
-            }
-        });
-
-        // Form submission (prevent default)
-        const form = document.querySelector('form');
-        if (form) {
-            form.addEventListener('submit', (e) => {
-                e.preventDefault();
-                alert('Thank you for your message. We will be in touch soon.');
-                form.reset();
-            });
-        }
-    </script>
 </body>
 
 </html>
