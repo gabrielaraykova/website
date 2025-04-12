@@ -97,6 +97,49 @@
         </div>
     </div>
 
+    <!-- Contact -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contact</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3 class="contact-title">Get in Touch</h3>
+                    <div class="contact-item">
+                        <span class="contact-label">Studio Address</span>
+                        <p>123 Atelier Street<br>Fashion District<br>New York, NY 10001</p>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-label">Email</span>
+                        <p>studio@ivankaraykova.com</p>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-label">Phone</span>
+                        <p>+1 (212) 555-0123</p>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-label">Hours</span>
+                        <p>Monday–Friday: 10am–6pm<br>Saturday: By appointment only<br>Sunday: Closed</p>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3 class="contact-title">Send a Message</h3>
+                    <form>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" placeholder="Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer>
         <div class="container">
@@ -105,7 +148,6 @@
                     <div class="footer-logo">IVANKA RAYKOVA</div>
                     <p>Contemporary fashion design celebrating cultural heritage through traditional embroidery and
                         modern silhouettes.</p>
-
                     <div class="social-links">
                         <a href="#" class="social-link">IG</a>
                         <a href="#" class="social-link">FB</a>
@@ -113,27 +155,23 @@
                         <a href="#" class="social-link">PT</a>
                     </div>
                 </div>
-
                 <div class="footer-col">
                     <h4 class="footer-heading">Navigation</h4>
                     <ul class="footer-nav">
-                        <li><a href="../../index.html">Home</a></li>
+                        <li><a href="../../index.html#collections">Collections</a></li>
                         <li><a href="../../index.html#about">About</a></li>
                         <li><a href="../../index.html#atelier">Atelier</a></li>
                         <li><a href="../../index.html#contact">Contact</a></li>
                     </ul>
                 </div>
-
                 <div class="footer-col">
                     <h4 class="footer-heading">Collections</h4>
                     <ul class="footer-nav">
-                        <li><a href="../bulgarian-broderie/index.html">Bulgarian broderie</a></li>
-                        <li><a href="../summer-2025/index.html">Summer 2025</a></li>
-                        <li><a href="../winter-2024/index.html">Winter 2024</a></li>
-                        <li><a href="../archive/index.html">Archive</a></li>
+                        <li><a href="../bulgarian-broderie/">Bulgarian broderie</a></li>
+                        <li><a href="">Summer 2025</a></li>
+                        <li><a href="">Winter 2024</a></li>
                     </ul>
                 </div>
-
                 <div class="footer-col">
                     <h4 class="footer-heading">Information</h4>
                     <ul class="footer-nav">
@@ -144,7 +182,6 @@
                     </ul>
                 </div>
             </div>
-
             <div class="copyright">
                 <p>&copy; 2025 IVANKA RAYKOVA. All Rights Reserved.</p>
             </div>
@@ -187,6 +224,16 @@
                 header.style.boxShadow = 'none';
             }
         });
+
+        // Form submission (prevent default)
+        const form = document.querySelector('form');
+        if (form) {
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Thank you for your message. We will be in touch soon.');
+                form.reset();
+            });
+        }
     </script>
 </body>
 
