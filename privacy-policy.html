@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms & Conditions | IVANKA RAYKOVA</title>
+    <title>Privacy Policy | IVANKA RAYKOVA</title>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <style>
         :root {
@@ -31,10 +30,7 @@
             margin: 0 auto;
         }
 
-        h1,
-        h2,
-        h3,
-        h4 {
+        h1, h2, h3, h4 {
             font-family: var(--font-secondary);
             margin: 2rem 0 1rem;
         }
@@ -53,8 +49,7 @@
             margin-bottom: 1rem;
         }
 
-        ul,
-        ol {
+        ul, ol {
             margin-left: 2rem;
             margin-bottom: 1rem;
         }
@@ -72,21 +67,19 @@
         }
     </style>
 </head>
-
 <body>
-    <div id="terms-content"></div>
+    <div id="privacy-content"></div>
 
     <script>
-        fetch('@terms_and_conditions.md')
+        fetch('@privacy_policy.md')
             .then(response => response.text())
             .then(markdown => {
-                document.getElementById('terms-content').innerHTML = marked.parse(markdown);
+                document.getElementById('privacy-content').innerHTML = marked.parse(markdown);
             })
             .catch(error => {
-                console.error('Error loading terms and conditions:', error);
-                document.getElementById('terms-content').innerHTML = '<p>Error loading terms and conditions. Please try again later.</p>';
+                console.error('Error loading privacy policy:', error);
+                document.getElementById('privacy-content').innerHTML = '<p>Error loading privacy policy. Please try again later.</p>';
             });
     </script>
 </body>
-
 </html>
