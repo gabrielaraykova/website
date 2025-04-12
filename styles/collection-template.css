@@ -575,9 +575,43 @@ body {
 
 /* Contact */
 .contact {
-    padding: 2rem 0;
+    padding: 8rem 0;
     background-color: var(--secondary-color);
     color: var(--primary-color);
+}
+
+.contact-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 4rem;
+}
+
+.contact-info,
+.contact-form {
+    flex: 1;
+    min-width: 300px;
+}
+
+.contact-title {
+    font-family: var(--font-secondary);
+    margin-bottom: 2rem;
+}
+
+.contact-item {
+    margin-bottom: 1.5rem;
+}
+
+.contact-label {
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
 }
 
 .contact-content {
