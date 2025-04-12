@@ -576,10 +576,10 @@ body {
     padding: 2rem 0;
     background-color: var(--secondary-color);
     color: var(--primary-color);
-    text-align: center;
 }
 
 .contact-heading {
+    text-align: center;
     font-family: var(--font-secondary);
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
@@ -591,6 +591,8 @@ body {
     align-items: flex-start;
     justify-content: center;
     gap: 3rem;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .contact-item {
@@ -610,6 +612,7 @@ body {
 .phone-links {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     gap: 0.5rem;
 }
 
@@ -620,6 +623,7 @@ body {
     font-size: 0.95rem;
     letter-spacing: 0.5px;
     transition: var(--transition);
+    white-space: nowrap;
 }
 
 .contact-link:hover {
@@ -632,7 +636,7 @@ body {
 
 .contact-divider {
     width: 1px;
-    height: 60px;
+    height: 80px;
     background-color: rgba(255, 255, 255, 0.3);
 }
 
