@@ -4,93 +4,118 @@
   "items": [
     {
       "id": "bb001",
-      "title": "White Embroidered Dress",
-      "description": "A stunning white linen dress featuring intricate hand-embroidered floral patterns inspired by traditional Bulgarian folk art. The delicate embroidery creates a striking contrast against the pure white fabric, while the minimalist silhouette offers a contemporary interpretation of traditional craftsmanship.",
+      "title": "White Linen Dress with Red Folk Embroidery",
+      "description": "A refined white linen dress adorned with vivid red hand-embroidered patterns inspired by traditional Bulgarian folk symbols. The symmetrical motifs along the neckline, cuffs, and hem add cultural depth to the minimalist silhouette, blending timeless tradition with understated elegance.",
       "image": "1.jpg",
       "material": "100% organically sourced linen",
-      "fabric": "Medium-weight linen with a soft, matte finish",
-      "craftsmanship": "Hand-embroidered using traditional Bulgarian techniques with patterns passed down through generations. Each piece requires approximately 120 hours of meticulous work."
+      "fabric": "Hand-embroidered using traditional Bulgarian techniques, featuring regionally inspired motifs passed down through generations. Each piece involves approximately 100 hours of dedicated artisanal work."
     },
     {
       "id": "bb002",
-      "title": "White Embroidered Set",
-      "description": "This elegant two-piece set combines a crop top and flowing skirt, both adorned with geometric embroidery patterns that draw inspiration from ancient Bulgarian textiles. The balanced proportions and clean lines create a modern silhouette while honoring traditional aesthetics.",
+      "title": "White Embroidered Linen Set",
+      "description": "This elegant two-piece white linen set features a sleeveless cropped vest and a high-waisted mini skirt, both adorned with traditional Bulgarian embroidery. Hand-embroidered geometric motifs, symbolizing prosperity and protection, reflect the rich cultural heritage of the Balkans. Crafted from a breathable linen-silk blend, the outfit merges timeless folk elements with a clean, modern silhouette — perfect for summer fashion lovers seeking artisan-made, ethical clothing.",
       "image": "2.jpg",
       "material": "95% linen, 5% silk blend",
-      "fabric": "Lightweight linen-silk blend with subtle texture and gentle drape",
-      "craftsmanship": "Hand-embroidered using a combination of traditional cross-stitch and modern techniques. The geometric patterns represent symbols of prosperity and protection from Bulgarian folklore."
+      "fabric": "Lightweight linen-silk fabric with a soft texture and natural drape",
+      "craftsmanship": "Hand-embroidered using a fusion of traditional cross-stitch techniques and contemporary detailing. Every piece is inspired by ancient Bulgarian textiles and folklore symbols."
     },
     {
       "id": "bb003",
-      "title": "White Embroidered Outfit",
-      "description": "A versatile ensemble featuring intricate embroidery along the neckline, sleeves, and hem. The loose-fitting silhouette provides comfort while the detailed needlework creates visual interest and celebrates the rich textile heritage of Bulgaria.",
+      "title": "This modern three-piece ensemble features a structured white bustier, asymmetrical mini skirt, and a sheer organza balloon-sleeve jacket. Each piece is delicately hand-embroidered with geometric patterns inspired by Bulgarian folklore, symbolizing femininity, protection, and abundance. Crafted from a breathable linen-silk blend and airy sheer fabric, this set seamlessly blends tradition with contemporary summer fashion.",
       "image": "3.jpg",
-      "material": "100% organic cotton",
-      "fabric": "Lightweight cotton with a crisp, clean feel and natural breathability",
-      "craftsmanship": "Each embroidery motif is sketched by hand before being carefully transferred to the fabric. The intricate patterns require precise stitching techniques that have been preserved for centuries."
+      "material": "80% linen, 15% silk, 5% poly-organza",
+      "fabric": " Lightweight linen-silk blend for the bustier and skirt; sheer structured organza for the jacket",
+      "craftsmanship": "Hand-embroidered using a mix of traditional and modern techniques. The symbolic motifs represent heritage and cultural identity from Bulgarian textile traditions."
     },
     {
       "id": "bb004",
-      "title": "White Tailored Outfit",
-      "description": "A sophisticated ensemble featuring clean lines and subtle embroidery details. The tailored silhouette offers a contemporary interpretation of traditional Bulgarian garments, with embroidered accents that add a touch of cultural heritage to the modern design.",
+      "title": "Embroidered Bustier with Ruffles and Straight-Cut Trousers",
+      "description": "This refined two-piece set combines a structured linen bustier with an asymmetric ruffle on one shoulder and tailored straight-leg trousers. The pants feature a striking vertical embroidery motif inspired by traditional Bulgarian symbols, running seamlessly from waist to hem on one leg. Designed for the modern woman, this outfit merges minimalist lines with meaningful folk artistry, offering a clean yet expressive look ideal for urban settings, day-to-day wear, and warm-weather sophistication. Lightweight, breathable, and consciously made, this ensemble embodies elegance rooted in culture.",
       "image": "4.jpg",
-      "material": "80% linen, 20% cotton blend",
-      "fabric": "Medium-weight linen-cotton blend with natural texture and excellent drape",
-      "craftsmanship": "Combines modern tailoring techniques with traditional embroidery methods. The minimal embroidery patterns are inspired by Bulgarian rose motifs, a symbol of the country's rich floral heritage."
+      "material": "95% linen, 5% silk blend",
+      "fabric": "Lightweight linen-silk fabric with a soft texture and natural drape",
+      "craftsmanship": "Hand embroidery on the trousers inspired by Bulgarian folklore motifs; ruffled bustier detail adds subtle asymmetry and feminine contrast to the structured form."
     },
     {
       "id": "bb005",
-      "title": "White Embroidered Tunic",
-      "description": "A relaxed tunic featuring intricate embroidery across the chest and sleeves. The oversized silhouette is balanced by delicate needlework that showcases the skill of Bulgarian artisans and creates a perfect harmony between tradition and contemporary design.",
+      "title": "TO BE UPDATED",
+      "description": "Made from 100% breathable premium cotton, this innovative two-piece summer set includes a longline embroidered shirt and tailored high-waisted shorts. The shirt features detachable sleeves, allowing you to transform it into a sleeveless tunic for warmer days. A wide adjustable waist belt enhances the silhouette and adds styling versatility. The front panel is hand-embroidered with motifs inspired by traditional Bulgarian folklore, combining cultural artistry with modern practicality. Paired with minimalist cotton shorts, the look is perfect for urban outings, travel, or relaxed summer styling.",
       "image": "5.jpg",
-      "material": "100% natural linen",
-      "fabric": "Medium-weight linen with a textured, slightly slubbed appearance",
-      "craftsmanship": "Hand-embroidered using a combination of chain stitch and satin stitch techniques. The intricate pattern work draws inspiration from traditional Bulgarian village textiles from the 19th century."
+      "material": "100% breathable premium cotton ",
+      "fabric": "Crisp, airy cotton with subtle texture",
+      "craftsmanship": "Hand-embroidered using a fusion of traditional cross-stitch techniques and contemporary detailing. Every piece is inspired by ancient Bulgarian textiles and folklore symbols.."
     },
     {
       "id": "bb006",
-      "title": "Beige Embroidered Outfit",
-      "description": "A natural beige ensemble featuring contrasting embroidery that stands out against the earthy background. The relaxed cut is complemented by detailed needlework that celebrates the rich textile traditions of Bulgarian culture while offering modern comfort and style.",
+      "title": "Linen Two-Piece Set with Detachable Embroidered Skirt Detail",
+      "description": "This beautifully tailored two-piece linen set blends traditional embroidery with a clean, modern silhouette. The look includes a cropped top with elastic waist and sleeves, paired with wide-leg trousers and detachable skirt. Each piece is made from 100% natural linen – breathable, eco-friendly, and perfect for warmer days. The hand-embroidered motifs on the top and belt draw inspiration from ancient Bulgarian symbols, believed to bring harmony and strength. You can wear the pants with or without the extra embroidered apron-skirt, making this look both versatile and stylish for urban wear, travel, or conscious everyday fashion.",
       "image": "6.jpg",
-      "material": "100% organic hemp",
-      "fabric": "Medium-weight hemp with natural variations in texture and a subtle sheen",
-      "craftsmanship": "Hand-embroidered using traditional Bulgarian techniques with vegetable-dyed threads. The patterns are adapted from historic textiles found in Bulgarian national museums."
+      "material": "100% linen",
+      "fabric": "Lightweight linen fabric with a soft texture and natural drape",
+      "craftsmanship": "Hand-embroidered using a fusion of traditional cross-stitch techniques and contemporary detailing. Every piece is inspired by ancient Bulgarian textiles and folklore symbols."
     },
     {
       "id": "bb007",
-      "title": "Beige Embroidered Dress",
-      "description": "A flowing beige dress with delicate embroidery details along the neckline and hem. The simple silhouette allows the intricate needlework to take center stage, creating a garment that honors traditional craftsmanship while remaining thoroughly contemporary.",
+      "title": "White Embroidered Linen Set with Detachable Pocket",
+      "description": "A refined beige dress that brings together timeless tradition and modern minimalism. Made from 100% natural linen, it features hand embroidery along the neckline and hem — delicate folkloric details that stand out against the clean silhouette. A unique and functional touch is the detachable side pocket, which can be added or removed depending on the occasion or your styling preference.",
       "image": "7.jpg",
-      "material": "90% linen, 10% silk",
-      "fabric": "Lightweight linen-silk blend with excellent drape and subtle sheen",
-      "craftsmanship": "Features handcrafted embroidery using techniques preserved from generations of Bulgarian textile artisans. Each embroidery motif tells a story from Bulgarian folklore and takes approximately 80 hours to complete."
+      "material": "100% linen",
+      "fabric": "Lightweight, breathable linen with a soft drape and natural texture — perfect for warm days when comfort and elegance go hand in hand.",
+      "craftsmanship": "The embroidery is hand-stitched by Bulgarian artisans using traditional techniques passed down through generations. Each motif is inspired by symbols from Bulgarian folklore and takes approximately 80 hours of meticulous work to complete — turning the dress into a truly wearable piece of cultural heritage."
     },
     {
       "id": "bb008",
-      "title": "Men's White Suit",
-      "description": "A refined men's suit in crisp white linen featuring subtle embroidery details. The clean lines and minimal silhouette are enhanced by carefully placed traditional motifs that add character and cultural significance to this contemporary ensemble.",
+      "title": "Men's White Linen Suit",
+      "description": "A sharp and contemporary take on classic tailoring, this men's suit is crafted entirely from high-quality linen in a clean white tone. Designed for the modern gentleman, the suit features a structured silhouette with a double-breasted jacket and straight-leg trousers, delivering both elegance and ease. Discreet traditional embroidery details add a subtle nod to heritage without compromising its refined, minimalist aesthetic.",
       "image": "8.jpg",
       "material": "100% premium linen",
-      "fabric": "Medium-weight linen with a structured yet breathable quality, perfect for tailoring",
-      "craftsmanship": "Combines modern tailoring techniques with traditional embroidery methods. The precision stitching requires skilled artisans who have mastered both contemporary and historic textile practices."
+      "fabric": "Mid-weight linen with excellent breathability and a natural, slightly textured finish — ideal for spring and summer occasions.",
+      "craftsmanship": "Expertly tailored using traditional construction techniques. The embroidery, though minimal, is hand-applied by Bulgarian artisans, offering a unique blend of old-world craftsmanship and modern design. Perfect for those who appreciate timeless elegance and cultural nuance in menswear."
     },
     {
-      "id": "bb008",
-      "title": "Men's White Suit",
-      "description": "A refined men's suit in crisp white linen featuring subtle embroidery details. The clean lines and minimal silhouette are enhanced by carefully placed traditional motifs that add character and cultural significance to this contemporary ensemble.",
+      "id": "bb009",
+      "title": "Men's Embroidered Linen Suit",
+      "description": "The suit presents a modern cut with a structured shoulder, tailored trousers, and a minimalist cropped jacket for a clean and refined silhouette. Discreet but meaningful embroidery accents appear on the waistband, jacket lining, and cuffs, bringing a unique character to the ensemble. Paired with a crisp white shirt, adorned with matching vertical embroidery along the front placket, the outfit balances formality with artisanal charm.",
       "image": "9.jpg",
       "material": "100% premium linen",
-      "fabric": "Medium-weight linen with a structured yet breathable quality, perfect for tailoring",
-      "craftsmanship": "Combines modern tailoring techniques with traditional embroidery methods. The precision stitching requires skilled artisans who have mastered both contemporary and historic textile practices."
+      "fabric": "Mid-weight linen with a natural, soft texture. Breathable and durable, it provides a comfortable wear while maintaining a structure, polished appearance.",
+      "craftsmanship": "The set is a testament to masterful craftsmanship. The embroidery—hand-stitched by Bulgarian artisans—is executed using ancestral techniques passed down through generations. Each motif holds symbolic meaning, often derived from folklore and nature. The jacket features an exclusive hidden embroidery detail on the inside, transforming the garment into a piece of wearable storytelling."
     },
     {
-      "id": "bb008",
-      "title": "Men's White Suit",
-      "description": "A refined men's suit in crisp white linen featuring subtle embroidery details. The clean lines and minimal silhouette are enhanced by carefully placed traditional motifs that add character and cultural significance to this contemporary ensemble.",
+      "id": "bb010",
+      "title": "White Linen Dress with Embroidered Trench Coat",
+      "description": "This modern linen set combines a minimalist white dress with a lightweight trench coat, both crafted from natural fabrics and accented with traditional embroidery. The dress features subtle folkloric motifs on the front, while the trench coat enhances the look with hand-embroidered sleeves and a hidden detail under the collar — blending functionality with cultural heritage.",
       "image": "10.jpg",
-      "material": "100% premium linen",
-      "fabric": "Medium-weight linen with a structured yet breathable quality, perfect for tailoring",
-      "craftsmanship": "Combines modern tailoring techniques with traditional embroidery methods. The precision stitching requires skilled artisans who have mastered both contemporary and historic textile practices."
+      "material": "95% linen, 5% silk blend",
+      "fabric": "Breathable and lightweight linen with a soft, natural texture. The trench coat is made from a structured linen blend, offering ease of movement and a refined silhouette — ideal for layering in warmer seasons",
+      "craftsmanship": "Both pieces feature handcrafted embroidery by Bulgarian artisans. The motifs are inspired by authentic symbols of prosperity and protection from regional folklore. Every stitch reflects a commitment to cultural preservation and modern design sensibility."
+    },
+    {
+      "id": "bb011",
+      "title": "Feathered Cocktail Set with Satin Skirt",
+      "description": "A luxurious designer ensemble featuring a statement cropped top adorned with natural feathers in warm tones, paired with a high-waisted flared satin skirt. Inspired by runway glamour, this set is crafted for special occasions and elegant evening looks. The top combines artistic flair with intricate handwork, while the skirt enhances the waistline and creates a graceful silhouette. A perfect choice for women seeking exclusive fashion, boutique craftsmanship, and a bold style presence.",
+      "image": "11.jpg",
+      "material": "Feathers, 100% satin",
+      "fabric": "Smooth satin with a soft sheen and structured body, contrasted with a voluminous feather texture for striking visual appeal",
+      "craftsmanship": "Hand-embroidered using a fusion of traditional cross-stitch techniques and contemporary detailing. Every piece is inspired by ancient Bulgarian textiles and folklore symbols.."
+    },
+    {
+      "id": "bb012",
+      "title": "Beige Linen Set with Embroidery and Front Slit",
+      "description": "A refined two-piece set featuring a sleeveless vest and a fitted pencil skirt with a bold front slit. Highlighted by delicate hand embroidery in traditional Bulgarian floral motifs, this look blends cultural heritage with a modern feminine silhouette. The natural linen fabric ensures breathability and ease, making it a standout choice for women who appreciate designer craftsmanship with folkloric flair.",
+      "image": "12.jpg",
+      "material": "100% natural linen",
+      "fabric": "Medium-weight linen with a soft texture and natural structure, offering comfort and tailored form",
+      "craftsmanship": "Each embroidered element is handcrafted using traditional techniques inspired by antique Bulgarian patterns. Both the vest and skirt are meticulously constructed, balancing modern tailoring with artisanal detail."
+    },
+    {
+      "id": "bb013",
+      "title": "Тulle floral skirt and bustier",
+      "description": "Delicacy and artistry come together in this ethereal two-piece set, featuring a sheer tulle blouse hand-embroidered with raised floral appliqués and a flowing long skirt. The design blends soft silhouettes with romantic details like cotton pom-poms and organza flower accents, evoking a poetic and feminine aesthetic. Ideal for special occasions, fashion editorials, or anyone seeking a unique piece with artisanal soul.",
+      "image": "13.jpg",
+      "material": "70% polyester, 30% embroidered cotton",
+      "fabric": "Lightweight, translucent tulle paired with matte-finish flowing chiffon",
+      "craftsmanship": "Each flower is hand-embroidered using 3D appliqué techniques and raised stitching. The pom-pom trims are individually sewn, adding a playful yet sophisticated touch to a piece crafted in ethical garment workshops."
     }
   ]
 }

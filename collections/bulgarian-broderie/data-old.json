@@ -1,0 +1,96 @@
+{
+  "title": "Bulgarian Broderie",
+  "description": "This collection celebrates traditional Bulgarian embroidery techniques reimagined in contemporary silhouettes. Each piece features handcrafted details that honor our cultural heritage while embracing modern design aesthetics.",
+  "items": [
+    {
+      "id": "bb001",
+      "title": "White Embroidered Dress",
+      "description": "A stunning white linen dress featuring intricate hand-embroidered floral patterns inspired by traditional Bulgarian folk art. The delicate embroidery creates a striking contrast against the pure white fabric, while the minimalist silhouette offers a contemporary interpretation of traditional craftsmanship.",
+      "image": "1.jpg",
+      "material": "100% organically sourced linen",
+      "fabric": "Medium-weight linen with a soft, matte finish",
+      "craftsmanship": "Hand-embroidered using traditional Bulgarian techniques with patterns passed down through generations. Each piece requires approximately 120 hours of meticulous work."
+    },
+    {
+      "id": "bb002",
+      "title": "White Embroidered Set",
+      "description": "This elegant two-piece set combines a crop top and flowing skirt, both adorned with geometric embroidery patterns that draw inspiration from ancient Bulgarian textiles. The balanced proportions and clean lines create a modern silhouette while honoring traditional aesthetics.",
+      "image": "2.jpg",
+      "material": "95% linen, 5% silk blend",
+      "fabric": "Lightweight linen-silk blend with subtle texture and gentle drape",
+      "craftsmanship": "Hand-embroidered using a combination of traditional cross-stitch and modern techniques. The geometric patterns represent symbols of prosperity and protection from Bulgarian folklore."
+    },
+    {
+      "id": "bb003",
+      "title": "White Embroidered Outfit",
+      "description": "A versatile ensemble featuring intricate embroidery along the neckline, sleeves, and hem. The loose-fitting silhouette provides comfort while the detailed needlework creates visual interest and celebrates the rich textile heritage of Bulgaria.",
+      "image": "3.jpg",
+      "material": "100% organic cotton",
+      "fabric": "Lightweight cotton with a crisp, clean feel and natural breathability",
+      "craftsmanship": "Each embroidery motif is sketched by hand before being carefully transferred to the fabric. The intricate patterns require precise stitching techniques that have been preserved for centuries."
+    },
+    {
+      "id": "bb004",
+      "title": "White Tailored Outfit",
+      "description": "A sophisticated ensemble featuring clean lines and subtle embroidery details. The tailored silhouette offers a contemporary interpretation of traditional Bulgarian garments, with embroidered accents that add a touch of cultural heritage to the modern design.",
+      "image": "4.jpg",
+      "material": "80% linen, 20% cotton blend",
+      "fabric": "Medium-weight linen-cotton blend with natural texture and excellent drape",
+      "craftsmanship": "Combines modern tailoring techniques with traditional embroidery methods. The minimal embroidery patterns are inspired by Bulgarian rose motifs, a symbol of the country's rich floral heritage."
+    },
+    {
+      "id": "bb005",
+      "title": "White Embroidered Tunic",
+      "description": "A relaxed tunic featuring intricate embroidery across the chest and sleeves. The oversized silhouette is balanced by delicate needlework that showcases the skill of Bulgarian artisans and creates a perfect harmony between tradition and contemporary design.",
+      "image": "5.jpg",
+      "material": "100% natural linen",
+      "fabric": "Medium-weight linen with a textured, slightly slubbed appearance",
+      "craftsmanship": "Hand-embroidered using a combination of chain stitch and satin stitch techniques. The intricate pattern work draws inspiration from traditional Bulgarian village textiles from the 19th century."
+    },
+    {
+      "id": "bb006",
+      "title": "Beige Embroidered Outfit",
+      "description": "A natural beige ensemble featuring contrasting embroidery that stands out against the earthy background. The relaxed cut is complemented by detailed needlework that celebrates the rich textile traditions of Bulgarian culture while offering modern comfort and style.",
+      "image": "6.jpg",
+      "material": "100% organic hemp",
+      "fabric": "Medium-weight hemp with natural variations in texture and a subtle sheen",
+      "craftsmanship": "Hand-embroidered using traditional Bulgarian techniques with vegetable-dyed threads. The patterns are adapted from historic textiles found in Bulgarian national museums."
+    },
+    {
+      "id": "bb007",
+      "title": "Beige Embroidered Dress",
+      "description": "A flowing beige dress with delicate embroidery details along the neckline and hem. The simple silhouette allows the intricate needlework to take center stage, creating a garment that honors traditional craftsmanship while remaining thoroughly contemporary.",
+      "image": "7.jpg",
+      "material": "90% linen, 10% silk",
+      "fabric": "Lightweight linen-silk blend with excellent drape and subtle sheen",
+      "craftsmanship": "Features handcrafted embroidery using techniques preserved from generations of Bulgarian textile artisans. Each embroidery motif tells a story from Bulgarian folklore and takes approximately 80 hours to complete."
+    },
+    {
+      "id": "bb008",
+      "title": "Men's White Suit",
+      "description": "A refined men's suit in crisp white linen featuring subtle embroidery details. The clean lines and minimal silhouette are enhanced by carefully placed traditional motifs that add character and cultural significance to this contemporary ensemble.",
+      "image": "8.jpg",
+      "material": "100% premium linen",
+      "fabric": "Medium-weight linen with a structured yet breathable quality, perfect for tailoring",
+      "craftsmanship": "Combines modern tailoring techniques with traditional embroidery methods. The precision stitching requires skilled artisans who have mastered both contemporary and historic textile practices."
+    },
+    {
+      "id": "bb008",
+      "title": "Men's White Suit",
+      "description": "A refined men's suit in crisp white linen featuring subtle embroidery details. The clean lines and minimal silhouette are enhanced by carefully placed traditional motifs that add character and cultural significance to this contemporary ensemble.",
+      "image": "9.jpg",
+      "material": "100% premium linen",
+      "fabric": "Medium-weight linen with a structured yet breathable quality, perfect for tailoring",
+      "craftsmanship": "Combines modern tailoring techniques with traditional embroidery methods. The precision stitching requires skilled artisans who have mastered both contemporary and historic textile practices."
+    },
+    {
+      "id": "bb008",
+      "title": "Men's White Suit",
+      "description": "A refined men's suit in crisp white linen featuring subtle embroidery details. The clean lines and minimal silhouette are enhanced by carefully placed traditional motifs that add character and cultural significance to this contemporary ensemble.",
+      "image": "10.jpg",
+      "material": "100% premium linen",
+      "fabric": "Medium-weight linen with a structured yet breathable quality, perfect for tailoring",
+      "craftsmanship": "Combines modern tailoring techniques with traditional embroidery methods. The precision stitching requires skilled artisans who have mastered both contemporary and historic textile practices."
+    }
+  ]
+}
