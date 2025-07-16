@@ -32,7 +32,7 @@ function displayCollection(data) {
     const videoHTML = `
         <div class="collection-video">
             <iframe width="100%" height="450"
-                src="https://www.youtube.com/embed/IGnrsP5Ec30?autoplay=1&mute=0&quality=hd1080"
+                src="https://www.youtube.com/embed/IGnrsP5Ec30?autoplay=1&mute=0&vq=hd1080&hd=1"
                 title="Bulgarian Broderie Collection" frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowfullscreen>
