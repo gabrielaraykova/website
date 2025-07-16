@@ -732,9 +732,15 @@ footer {
     padding: 0 20px;
 }
 
-.collection-video video {
+.collection-video video,
+.collection-video iframe {
     width: 100%;
     height: auto;
     display: block;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.collection-video iframe {
+    aspect-ratio: 16/9;
+    height: 450px;
 }
