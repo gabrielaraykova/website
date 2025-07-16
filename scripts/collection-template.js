@@ -25,11 +25,26 @@ function displayCollection(data) {
         return;
     }
 
-    // Set collection title and description
-    document.getElementById('collection-title').textContent = data.title || 'Collection';
-    document.getElementById('collection-description').textContent = data.description || '';
+    // Set title and description
+    document.getElementById('collection-title').textContent = data.title;
 
-    // Generate grid items
+    // Add video HTML before description
+    const videoHTML = `
+        <div class="collection-video">
+            <iframe width="100%" height="450"
+                src="https://www.youtube.com/embed/IGnrsP5Ec30?autoplay=1&mute=0&quality=hd1080"
+                title="Bulgarian Broderie Collection" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+        </div>
+    `;
+
+    // Insert video before description
+    const descriptionElement = document.getElementById('collection-description');
+    descriptionElement.insertAdjacentHTML('beforebegin', videoHTML);
+    descriptionElement.textContent = data.description;
+
     const gridContainer = document.getElementById('collection-grid');
     gridContainer.innerHTML = ''; // Clear existing content
 
