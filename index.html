@@ -347,6 +347,35 @@
          margin: 0 auto;
       }
 
+      /* Atelier text styling */
+      .atelier h3,
+      .atelier h4,
+      .atelier ol,
+      .atelier ul,
+      .atelier li {
+         font-family: var(--font-main);
+         font-size: clamp(0.9rem, 2vw, 1rem);
+         font-weight: normal;
+         letter-spacing: 0.3px;
+         line-height: 1.6;
+      }
+
+      .atelier h3,
+      .atelier h4 {
+         font-weight: bold;
+         margin-bottom: 1.5rem;
+         margin-top: 1.5rem;
+      }
+
+      .atelier ol,
+      .atelier ul {
+         margin-bottom: 1.5rem;
+      }
+
+      .atelier li {
+         margin-bottom: 1rem;
+      }
+
       /* Contact */
       .contact {
          padding: 8rem 0;
@@ -643,6 +672,22 @@
             display: none !important;
          }
       }
+
+      .service-separator {
+         width: 100%;
+         height: 1px;
+         background-color: var(--accent-color);
+         border: none;
+         margin: 3rem 0;
+      }
+
+      .section-separator {
+         width: 100%;
+         height: 1px;
+         background-color: var(--accent-color);
+         border: none;
+         margin: 2rem 0;
+      }
    </style>
 </head>
 
@@ -651,7 +696,7 @@
    <header>
       <div class="container">
          <div class="header-content">
-            <a href="#" class="logo">update 4 - IVANKA RAYKOVA</a>
+            <a href="#" class="logo">update 5 - IVANKA RAYKOVA</a>
             <!-- Desktop Navigation -->
             <nav>
                <ul class="nav-desktop">
@@ -759,6 +804,7 @@
    <section id="atelier" class="atelier">
       <div class="container">
          <h2 class="section-title">Atelier Services</h2>
+         <hr class="section-separator">
          <div class="atelier-content">
             <div class="service-section">
                <h3>1. Custom Design / Made-to-Measure Garments</h3>
@@ -768,9 +814,8 @@
                   around your vision and body, with every garment handcrafted from scratch using high-quality,
                   sustainable materials.</p>
 
-               <p>
+               <hr class="section-separator">
                <h4>How it works:</h4>
-               </p>
 
                <ol>
                   <li><strong>Send your inspiration</strong> Share a photo, sketch, or a description of the design you
@@ -791,6 +836,7 @@
                      and shipped directly to you.</li>
                </ol>
 
+               <hr class="section-separator">
                <h4>Why choose custom design with us:</h4>
 
                <ul>
@@ -817,6 +863,7 @@
                <p>Every woman's body is unique, and we approach each garment with the respect and precision it deserves.
                   We don't just fix clothes — we refine them to feel like they were made for you.</p>
 
+               <hr class="section-separator">
                <h4>Our services include:</h4>
 
                <ul>
@@ -831,6 +878,7 @@
                   <li><strong>Mending and reworking</strong> – repairing tears, seams, or reviving vintage pieces</li>
                </ul>
 
+               <hr class="section-separator">
                <h4>Why choose our alterations service:</h4>
 
                <ul>
